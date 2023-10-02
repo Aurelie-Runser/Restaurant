@@ -1,0 +1,16 @@
+@import "./foundations/reset";
+@import "./foundations/variables";
+
+section{
+    padding: 50px;
+}
+
+h1{
+    color: $color-main;
+    font-size: $font_size-extra;
+}
+
+h2{
+    color: $color-black;
+    font-size: $font_size-mega;
+}
