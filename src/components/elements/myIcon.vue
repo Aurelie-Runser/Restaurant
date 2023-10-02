@@ -75,6 +75,11 @@
 
     &.-etoile{
         
+        &.-vide{
+            stroke: $color-black;
+            fill: none;
+        }
+        
         &.-pleine{
             stroke: $color-main;
             fill: $color-main;
@@ -165,6 +170,7 @@ const className = computed(() => ({
   ' -shadow': props.shadow === 'true',
 
   ' -etoile -pleine': props.etoile === 'pleine',
-  ' -etoile -vide': props.etoile === 'vide'
+  ' -etoile -vide': props.etoile === 'vide',
+  ' -etoile -none': props.etoile === 'none'
 }))
 </script>
