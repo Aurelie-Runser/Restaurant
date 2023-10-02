@@ -9,12 +9,15 @@ export default {
         },
         size:{
             control: "select",
-            options:['regular', 'small'],
+            options:['regular', 'small']
         },
         variant:{
             control: "select",
-            options:['default', 'rounded'],
+            options:['default', 'rounded']
         },
+        icon:{
+            control: "boolean",
+        }
     }
 }
 
@@ -34,6 +37,7 @@ export const PrimaryButton = {
         href: "/",
         size: "regular",
         variant: "default",
+        icon: "false",
     }
 }
 
@@ -53,6 +57,27 @@ export const SecondaryButton = {
         href: "/",
         size: "regular",
         variant: "rounded",
+        icon: "false",
+    }
+}
+
+export const TertiairButton = {
+    render: (args) => {
+        return{
+            components: {
+                myButton
+            },
+            setup(){
+                return {args}
+            },
+            template: `<myButton v-bind="args">Hello World !</myButton>`
+        }
+    },
+    args:{
+        href: "/",
+        size: "regular",
+        variant: "rounded",
+        icon: "true",
     }
 }
 
@@ -72,6 +97,7 @@ export const SmallPrimaryButton = {
         href: "/",
         size: "small",
         variant: "default",
+        icon: "false",
     }
 }
 
@@ -91,6 +117,7 @@ export const SmallSecondaryButton = {
         href: "/",
         size: "small",
         variant: "rounded",
+        icon: "false",
     }
 }
 

@@ -1,6 +1,12 @@
 @import "./foundations/reset";
 @import "./foundations/variables";
 
+*,
+*::before,
+*::after{
+    box-sizing: content-box;
+}
+
 section{
     padding: 50px;
 }
