@@ -1,10 +1,11 @@
-<script setup>
-import myButton from "@/components/elements/myButton.vue"
-</script>
-
 <template>
   <main>
     <h1>Guide de Style</h1>
+
+    <section>
+      <h2>Icons</h2>
+
+    </section>
 
     <section>
       <h2>Boutons</h2>
@@ -15,3 +16,8 @@ import myButton from "@/components/elements/myButton.vue"
     </section>
   </main>
 </template>
+
+<script setup>
+import myButton from "@/components/elements/myButton.vue"
+import myIcon from "@/components/elements/myIcon.vue"
+</script>
