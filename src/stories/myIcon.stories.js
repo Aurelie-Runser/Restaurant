@@ -8,6 +8,18 @@ export default {
             control: "select",
             options:["camion", "chevron", "couverts", "couvertsCroises", "etoile", "facebook", "fleche", "heure", "instagram", "linkedin", "loupe", "phone", "ping", "play", "sac", "twitter"],
         },
+        direction:{
+            control: "select",
+            options:["default", "gauche"],
+        },
+        size:{
+            control: "select",
+            options:["small", "medium", "big"],
+        },
+        bg:{
+            control: "select",
+            options:["none", "black", "white", "orange"],
+        },
     }
 }
 
@@ -25,6 +37,9 @@ export const PrimaryIcon = {
     },
     args:{
         name: "camion",
+        direction: "default",
+        size: "small",
+        bg: "none"
     }
 }
 

@@ -1,20 +1,60 @@
 <template>
-    <i class="icon">
-        <component :is="getIcon" />
+    <i class="icon" :class="className">
+        <component :is="getIcon"/>
     </i>
 </template>
   
 <style lang="scss" scoped>
-.icon {
+.icon{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    height: 50px;
-    width: 50px;
-    padding: 1%;
     border-radius: 100%;
-    background: $color-white;
-    box-shadow: 0 0 5px $color-gray;
+    stroke: $color-black;
+    fill: $color-black;
+
+    &.-direction-gauche{
+        transform: rotate(180deg);
+    }
+
+    &.-small{
+        height: 20px;
+        width: 20px;
+        padding: 1%;
+    }
+
+    &.-medium{
+        height: 22px;
+        width: 22px;
+        padding: 10px;
+    }
+
+    &.-big{
+        height: 78px;
+        width: 78px;
+        padding: 20px;
+    }
+
+    &.-bg{
+        &.-black{
+            background-color: $color-black;
+            box-shadow: 0 0 5px $color-gray;
+            stroke: $color-white;
+            fill: $color-white;
+        }
+        
+        &.-white{
+            background-color: $color-white;
+            box-shadow: 0 0 5px $color-gray;
+        }
+        
+        &.-orange{
+            background-color: $color-main_light;
+            stroke: $color-main;
+            fill: $color-main;
+        }
+    }
+
 }
 </style>
   
@@ -39,7 +79,10 @@ import sacIcon from '@/components/icons/sacIcon.vue'
 import twitterIcon from '@/components/icons/twitterIcon.vue'
 
 const props = defineProps({
-    name: String
+    name: String,
+    direction: String,
+    bg: String,
+    size: String
 })
 
 const getIcon = computed(() => {
@@ -78,4 +121,16 @@ const getIcon = computed(() => {
             return twitterIcon
     }
 })
+
+const className = computed(() => ({
+  ' -direction-gauche': props.direction === 'gauche',
+
+  ' -small': props.size === 'small',
+  ' -medium': props.size === 'medium',
+  ' -big': props.size === 'big',
+
+  ' -bg -black': props.bg === 'black',
+  ' -bg -white': props.bg === 'white',
+  ' -bg -orange': props.bg === 'orange',
+}))
 </script>
