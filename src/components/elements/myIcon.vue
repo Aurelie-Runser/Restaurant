@@ -42,14 +42,12 @@
     &.-bg{
         &.-black{
             background-color: $color-black;
-            box-shadow: 0 0 5px $color-gray;
             stroke: $color-white;
             fill: $color-white;
         }
         
         &.-white{
             background-color: $color-white;
-            box-shadow: 0 0 5px $color-gray;
         }
         
         &.-orange{
@@ -66,10 +64,13 @@
         
         &.-blanc-orange{
             background-color: $color-white;
-            box-shadow: 0 0 20px rgba($color-gray, 50%);
             stroke: $color-main;
             fill: $color-main;
         }
+    }
+
+    &.-shadow{
+        box-shadow: 0 0 10px $color-gray;
     }
 
     &.-etoile{
@@ -105,8 +106,9 @@ import twitterIcon from '@/components/icons/twitterIcon.vue'
 const props = defineProps({
     name: String,
     direction: String,
-    bg: String,
     size: String,
+    bg: String,
+    shadow: String,
     etoile: String
 })
 
@@ -159,6 +161,8 @@ const className = computed(() => ({
   ' -bg -orange': props.bg === 'orange',
   ' -bg -orange-blanc': props.bg === 'orange-blanc',
   ' -bg -blanc-orange': props.bg === 'blanc-orange',
+
+  ' -shadow': props.shadow === 'true',
 
   ' -etoile -pleine': props.etoile === 'pleine',
   ' -etoile -vide': props.etoile === 'vide'
