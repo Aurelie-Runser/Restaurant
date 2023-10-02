@@ -57,14 +57,22 @@
             stroke: $color-main;
             fill: $color-main;
         }
+        
+        &.-orange-blanc{
+            background-color: $color-main;
+            stroke: $color-white;
+            fill: $color-white;
+        }
+        
+        &.-blanc-orange{
+            background-color: $color-white;
+            box-shadow: 0 0 20px rgba($color-gray, 50%);
+            stroke: $color-main;
+            fill: $color-main;
+        }
     }
 
     &.-etoile{
-        
-        &.-vide{
-            stroke: $color-black;
-            fill: none;
-        }
         
         &.-pleine{
             stroke: $color-main;
@@ -149,6 +157,8 @@ const className = computed(() => ({
   ' -bg -black': props.bg === 'black',
   ' -bg -white': props.bg === 'white',
   ' -bg -orange': props.bg === 'orange',
+  ' -bg -orange-blanc': props.bg === 'orange-blanc',
+  ' -bg -blanc-orange': props.bg === 'blanc-orange',
 
   ' -etoile -pleine': props.etoile === 'pleine',
   ' -etoile -vide': props.etoile === 'vide'

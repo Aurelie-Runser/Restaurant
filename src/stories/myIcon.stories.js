@@ -18,7 +18,7 @@ export default {
         },
         bg:{
             control: "select",
-            options:["none", "black", "white", "orange"],
+            options:["none", "black", "white", "orange", "orange-blanc", "blanc-orange"],
         },
         etoile:{
             control: "select",
