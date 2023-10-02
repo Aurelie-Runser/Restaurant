@@ -20,6 +20,10 @@ export default {
             control: "select",
             options:["none", "black", "white", "orange"],
         },
+        etoile:{
+            control: "select",
+            options:["vide", "pleine"],
+        },
     }
 }
 
@@ -39,7 +43,8 @@ export const PrimaryIcon = {
         name: "camion",
         direction: "default",
         size: "small",
-        bg: "none"
+        bg: "none",
+        etoile: "vide"
     }
 }
 

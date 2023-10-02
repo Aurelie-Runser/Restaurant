@@ -17,23 +17,27 @@
         transform: rotate(180deg);
     }
 
-    &.-small{
-        height: 20px;
-        width: 20px;
-        padding: 1%;
+    &.-size{
+
+        &.-small{
+            height: 20px;
+            width: 20px;
+            padding: 1%;
+        }
+    
+        &.-medium{
+            height: 22px;
+            width: 22px;
+            padding: 10px;
+        }
+    
+        &.-big{
+            height: 78px;
+            width: 78px;
+            padding: 20px;
+        }
     }
 
-    &.-medium{
-        height: 22px;
-        width: 22px;
-        padding: 10px;
-    }
-
-    &.-big{
-        height: 78px;
-        width: 78px;
-        padding: 20px;
-    }
 
     &.-bg{
         &.-black{
@@ -55,6 +59,18 @@
         }
     }
 
+    &.-etoile{
+        
+        &.-vide{
+            stroke: $color-black;
+            fill: none;
+        }
+        
+        &.-pleine{
+            stroke: $color-main;
+            fill: $color-main;
+        }
+    }
 }
 </style>
   
@@ -82,7 +98,8 @@ const props = defineProps({
     name: String,
     direction: String,
     bg: String,
-    size: String
+    size: String,
+    etoile: String
 })
 
 const getIcon = computed(() => {
@@ -125,12 +142,15 @@ const getIcon = computed(() => {
 const className = computed(() => ({
   ' -direction-gauche': props.direction === 'gauche',
 
-  ' -small': props.size === 'small',
-  ' -medium': props.size === 'medium',
-  ' -big': props.size === 'big',
+  ' -size -small': props.size === 'small',
+  ' -size -medium': props.size === 'medium',
+  ' -size -big': props.size === 'big',
 
   ' -bg -black': props.bg === 'black',
   ' -bg -white': props.bg === 'white',
   ' -bg -orange': props.bg === 'orange',
+
+  ' -etoile -pleine': props.etoile === 'pleine',
+  ' -etoile -vide': props.etoile === 'vide'
 }))
 </script>
