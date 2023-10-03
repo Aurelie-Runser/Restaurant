@@ -5,9 +5,6 @@
 *::before,
 *::after{
     box-sizing: content-box;
-    font-family: $font;
-    font-size: $font_size-regular;
-    font-weight: $font_weight-regular;
 }
 
 section{
@@ -22,4 +19,10 @@ h1{
 h2{
     color: $color-black;
     font-size: $font_size-mega;
+}
+
+div{
+    font-family: $font;
+    font-size: $font_size-small;
+    font-weight: $font_weight-regular;
 }
