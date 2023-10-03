@@ -47,21 +47,7 @@ export default {
                 category: "Produit Big",
             }
         },
-        
-        descriptionCourte:{
-            control: "text",
-            table: {
-                category: "Produit Small",
-            }
-        },
-        
-        descriptionLong:{
-            control: "text",
-            table: {
-                category: "Service",
-            }
-        },
-        
+
         icon:{
             control: "select",
             options: ["couverts", "couvertsCroises", "camion"],
@@ -97,7 +83,17 @@ export const ProduitBigCard = {
 }
 
 export const ProduitSmallCard = {
-    ...ProduitBigCard,
+    render: (args) => {
+        return{
+            components: {
+                myCard
+            },
+            setup(){
+                return {args}
+            },
+            template: `<myCard v-bind="args">Mushroom Sauce</myCard>`
+        }
+    },
     args:{
         type: "produit-small",
         border: "none",
@@ -110,7 +106,17 @@ export const ProduitSmallCard = {
 }
 
 export const ServiceCard = {
-    ...ProduitBigCard,
+    render: (args) => {
+        return{
+            components: {
+                myCard
+            },
+            setup(){
+                return {args}
+            },
+            template: `<myCard v-bind="args">But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron.</myCard>`
+        }
+    },
     args:{
         type: "service",
         border: "border",

@@ -37,7 +37,7 @@
 
         <div class="card__content">
             <h4>{{ title }}</h4>
-            <p class="card__content__des">{{ descriptionCourte }}</p>
+            <p class="card__content__des"><slot/></p>
             <p class="card__content__prix">{{ prix }}</p>
         </div>
 
@@ -51,7 +51,7 @@
         <div class="card-service__content">
             <myIcon :name="icon" size="big" bg="orange"/>
             <h4>{{title}}</h4>
-            <p>{{ descriptionLong }}</p>
+            <p><slot/></p>
         </div>
     </div>
 </template>
@@ -210,9 +210,6 @@ const props = defineProps({
     buttonTxt: String,
     note: String,
 
-    descriptionCourte: String,
-
-    descriptionLong: String,
     icon: String
 })
 

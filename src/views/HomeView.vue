@@ -22,10 +22,12 @@
 
     <section>
       <h2>Card</h2>
-      <myCard type="produit-small" imgSrc="/Burger.png" title="Hello" descriptionCourte="LALALLA" prix="5.00"/>
-      <myCard type="produit-small" imgSrc="/Cake.png" title="Hello" descriptionCourte="LALALLA" prix="5.00"/>
-      <myCard type="produit-small" imgSrc="/Pizza.png" title="Hello" descriptionCourte="LALALLA" prix="5.00"/>
-      <myCard type="produit-small" imgSrc="/FoodCombo.png" title="Hello" descriptionCourte="LALALLA" prix="5.00"/>
+      <myCard type="produit-small" imgSrc="/Burger.png" title="Hello" prix="5.00">zjdbkezj</myCard>
+      <myCard type="produit-small" imgSrc="/Cake.png" title="Hello" prix="5.00">MAZKLSDHN</myCard>
+      <myCard type="produit-small" imgSrc="/Pizza.png" title="Hello" prix="5.00">MAZKLSDHN</myCard>
+      <myCard type="produit-small" imgSrc="/FoodCombo.png" title="Hello" prix="5.00">MAZKLSDHN</myCard>
+
+      <myCard type="service" icon="camion" border="shadow" title="Healthy Food">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque, quasi tenetur omnis ratione enim fugiat dolore commodi ipsa maiores corporis in nemo nulla alias saepe recusandae aliquid ullam laudantium quod.</myCard>
     </section>
   </main>
 </template>
