@@ -22,19 +22,18 @@
         &.-small{
             height: 20px;
             width: 20px;
-            padding: 1%;
         }
     
         &.-medium{
-            height: 22px;
-            width: 22px;
+            height: 42px;
+            width: 42px;
             padding: 10px;
         }
     
         &.-big{
-            height: 78px;
-            width: 78px;
-            padding: 20px;
+            height: 98px;
+            width: 98px;
+            padding: 23px;
         }
     }
 
