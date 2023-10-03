@@ -17,7 +17,7 @@ export default {
             options:["small", "medium", "big"],
         },
         bg:{
-            control: "color",
+            control: "select",
             options:["none", "black", "white", "orange", "orange-blanc", "blanc-orange"],
         },
         shadow:{
