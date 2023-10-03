@@ -11,18 +11,33 @@ section{
     padding: 50px;
 }
 
-h1{
-    color: $color-main;
-    font-size: $font_size-extra;
-}
-
-h2{
-    color: $color-black;
-    font-size: $font_size-mega;
-}
-
 div{
     font-family: $font;
     font-size: $font_size-small;
     font-weight: $font_weight-regular;
+}
+
+h1{
+    font-size: $font_size-extra;
+    font-weight: $font_weight-bold;
+}
+
+h2{
+    font-size: $font_size-mega;
+    font-weight: $font_weight-bold;
+}
+
+h3{
+    font-size: $font_size-big;
+    font-weight: $font_weight-bold;
+}
+
+h4{
+    font-size: $font_size-regular;
+    font-weight: $font_weight-bold;
+}
+
+h5{
+    font-size: $font_size-litle;
+    font-weight: $font_weight-semibold;
 }
