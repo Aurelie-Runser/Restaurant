@@ -91,14 +91,13 @@
     
                 .card__note{
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: right;
                     align-items: center;
                     gap: 10px;
                 }
     
                 .card__prix{
-                    font-size: $font_size-litle;
-                    font-weight: $font_weight-medium;
+                    @include p1
                 }
             }
         }
@@ -138,13 +137,11 @@
             }
 
             .card__content__des{
-                font-size: $font_size-litle;
-                font-weight: $font_weight-medium;
+                @include p1;
             }
 
             .card__content__prix{
-                font-size: $font_size-litle;
-                font-weight: $font_weight-semibold;
+                @include h5;
 
                 &::before{
                     content: "$";

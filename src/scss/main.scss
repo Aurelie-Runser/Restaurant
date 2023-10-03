@@ -18,26 +18,21 @@ div{
 }
 
 h1{
-    font-size: $font_size-extra;
-    font-weight: $font_weight-bold;
+    @include h1
 }
 
 h2{
-    font-size: $font_size-mega;
-    font-weight: $font_weight-bold;
+    @include h2;
 }
 
 h3{
-    font-size: $font_size-big;
-    font-weight: $font_weight-bold;
+    @include h3
 }
 
 h4{
-    font-size: $font_size-regular;
-    font-weight: $font_weight-bold;
+    @include h4
 }
 
 h5{
-    font-size: $font_size-litle;
-    font-weight: $font_weight-semibold;
+    @include h5
 }
