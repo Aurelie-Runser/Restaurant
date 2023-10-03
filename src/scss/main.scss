@@ -5,6 +5,9 @@
 *::before,
 *::after{
     box-sizing: content-box;
+    font-family: $font;
+    font-size: $font_size-regular;
+    font-weight: $font_weight-regular;
 }
 
 section{
