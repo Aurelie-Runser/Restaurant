@@ -7,6 +7,15 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 15px auto;
+    width: 85vw;
+    min-width: 900px;
+    max-width: 1605px;
+    background-color: $color-white;
+    min-height: 100vh;
+}
+
 section{
     padding: 50px;
 }
@@ -35,4 +44,8 @@ h4{
 
 h5{
     @include h5
+}
+
+a:hover{
+    color: $color-main;
 }
