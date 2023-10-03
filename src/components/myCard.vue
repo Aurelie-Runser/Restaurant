@@ -22,7 +22,7 @@
                 </div>
     
                 <div class="card__prix">
-                    <p>${{prix}}</p>
+                    <p>$ {{prix}}</p>
                 </div>
             </div>
         </div>
@@ -134,10 +134,10 @@
 
         .card__img{
             width: 90%;
-            aspect-ratio: 1/1;
             margin: auto;
             object-fit: contain;
             overflow: hidden;
+            filter: drop-shadow(0 8px 8px $color-gray);
         }
     
         .card__content{
@@ -156,7 +156,7 @@
                 @include h5;
 
                 &::before{
-                    content: "$";
+                    content: "$ ";
                     color: #d92f26;
                 }
             }
