@@ -88,7 +88,7 @@ export const ProduitSmallCard = {
         imgSrc: "https://placewaifu.com/image/300",
         imgAlt: "mon image",
         title: "Burger",
-        descriptionCourte: "Mushroom Sauce"?
+        descriptionCourte: "Mushroom Sauce",
         prix: "5.15"
     }
 }
