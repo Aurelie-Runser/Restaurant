@@ -4,20 +4,27 @@ export default {
     title: "components/myCard",
     component: myCard,
     argTypes: {
-        title:{
-            control: "text",
-        },
-        description:{
-            control: "text",
-        },
         imgSrc:{
             control: "text",
         },
         imgAlt:{
             control: "text",
         },
-        buttonLab:{
+        title:{
             control: "text",
+        },
+        buttonTxt:{
+            control: "text",
+        },
+        note:{
+            control: "text",
+        },
+        prix:{
+            control: "text",
+        },
+        border:{
+            control: "select",
+            options: ["none", "border", "shadow"]
         },
     }
 }
@@ -35,10 +42,12 @@ export const TertiairButton = {
         }
     },
     args:{
-        title: "Ma Card",
-        description: "Ceci est une card.",
         imgSrc: "https://placewaifu.com/image/300",
         imgAlt: "mon image",
-        buttonLab: "clique ici"
+        title: "Green Beans",
+        buttonTxt: "Add To Cart",
+        note: "4.9",
+        prix: "15.00",
+        border: "shadow"
     }
 }
