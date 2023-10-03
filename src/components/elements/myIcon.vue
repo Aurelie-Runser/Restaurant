@@ -151,6 +151,8 @@ const getIcon = computed(() => {
             return sacIcon
         case 'twitter':
             return twitterIcon
+        default:
+            return twitterIcon
     }
 })
 
