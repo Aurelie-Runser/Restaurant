@@ -4,6 +4,11 @@ export default {
     title: "components/myCard",
     component: myCard,
     argTypes: {
+        type:{
+            control: "select",
+            options: ["services", "produit-big", "produit-small"]
+        },
+
         imgSrc:{
             control: "text",
         },
@@ -13,23 +18,37 @@ export default {
         title:{
             control: "text",
         },
-        buttonTxt:{
-            control: "text",
-        },
-        note:{
-            control: "text",
-        },
+
         prix:{
             control: "text",
+            table: {
+                category: "Produit",
+            }
         },
-        border:{
-            control: "select",
-            options: ["none", "border", "shadow"]
+
+        note:{
+            control: "text",
+            table: {
+                category: "Produit Big",
+            }
+        },
+        buttonTxt:{
+            control: "text",
+            table: {
+                category: "Produit Big",
+            }
+        },
+        
+        descriptionCourte:{
+            control: "text",
+            table: {
+                category: "Produit Small",
+            }
         },
     }
 }
 
-export const TertiairButton = {
+export const ProduitBigCard = {
     render: (args) => {
         return{
             components: {
@@ -42,12 +61,34 @@ export const TertiairButton = {
         }
     },
     args:{
-        imgSrc: "https://placewaifu.com/image/300",
+        type: "produit-big",
+        imgSrc: "https://placewaifu.com/image/500",
         imgAlt: "mon image",
         title: "Green Beans",
         buttonTxt: "Add To Cart",
         note: "4.9",
         prix: "15.00",
-        border: "shadow"
+    }
+}
+
+export const ProduitSmallCard = {
+    render: (args) => {
+        return{
+            components: {
+                myCard
+            },
+            setup(){
+                return {args}
+            },
+            template: `<myCard v-bind="args"/>`
+        }
+    },
+    args:{
+        type: "produit-small",
+        imgSrc: "https://placewaifu.com/image/300",
+        imgAlt: "mon image",
+        title: "Burger",
+        descriptionCourte: "Mushroom Sauce"?
+        prix: "5.15"
     }
 }
