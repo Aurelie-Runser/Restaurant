@@ -6,19 +6,28 @@ export default {
     argTypes: {
         type:{
             control: "select",
-            options: ["services", "produit-big", "produit-small"]
-        },
-
-        imgSrc:{
-            control: "text",
-        },
-        imgAlt:{
-            control: "text",
+            options: ["service", "produit-big", "produit-small"]
         },
         title:{
             control: "text",
         },
+        border:{
+            control: "select",
+            options: ["none", "border", "shadow"]
+        },
 
+        imgSrc:{
+            control: "text",
+            table: {
+                category: "Produit",
+            }
+        },
+        imgAlt:{
+            control: "text",
+            table: {
+                category: "Produit",
+            }
+        },
         prix:{
             control: "text",
             table: {
@@ -45,6 +54,21 @@ export default {
                 category: "Produit Small",
             }
         },
+        
+        descriptionLong:{
+            control: "text",
+            table: {
+                category: "Service",
+            }
+        },
+        
+        icon:{
+            control: "select",
+            options: ["couverts", "couvertsCroises", "camion"],
+            table: {
+                category: "Service",
+            }
+        },
     }
 }
 
@@ -62,6 +86,7 @@ export const ProduitBigCard = {
     },
     args:{
         type: "produit-big",
+        border: "shadow",
         imgSrc: "https://placewaifu.com/image/500",
         imgAlt: "mon image",
         title: "Green Beans",
@@ -72,23 +97,25 @@ export const ProduitBigCard = {
 }
 
 export const ProduitSmallCard = {
-    render: (args) => {
-        return{
-            components: {
-                myCard
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myCard v-bind="args"/>`
-        }
-    },
+    ...ProduitBigCard,
     args:{
         type: "produit-small",
+        border: "none",
         imgSrc: "https://placewaifu.com/image/300",
         imgAlt: "mon image",
         title: "Burger",
         descriptionCourte: "Mushroom Sauce",
         prix: "5.15"
+    }
+}
+
+export const ServiceCard = {
+    ...ProduitBigCard,
+    args:{
+        type: "service",
+        border: "border",
+        icon: "couverts",
+        title: "Healthy Food",
+        descriptionLong: "But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron."
     }
 }

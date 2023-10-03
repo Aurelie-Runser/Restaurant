@@ -27,6 +27,7 @@
             </div>
         </div>
     </div>
+
     <div v-if="type === 'produit-small'" class="card" :class="className">
         <div class="card__bg"></div>
 
@@ -45,6 +46,14 @@
             <myIcon name="fleche" size="medium" bg="white" direction="gauche"/>
         </div>
     </div>
+
+    <div v-if="type === 'service'" class="card" :class="className">
+        <div class="card-service__content">
+            <myIcon :name="icon" size="big" bg="orange"/>
+            <h4>{{title}}</h4>
+            <p>{{ descriptionLong }}</p>
+        </div>
+    </div>
 </template>
 
 <style lang="scss" scoped>
@@ -54,17 +63,20 @@
         border: 1px solid $color-gray;
     }
 
+    &.-shadow{
+        box-shadow: 0px 2px 30px 0px rgba($color-gray, 60%);
+    }
+
     &.-produit-big{
         max-width: 500px;
         min-width: 400px;
-        height: 485px;
-        border-radius: 20px;
-        box-shadow: 0px 2px 30px 0px rgba($color-gray, 60%);
+        aspect-ratio: 1/1;
+        border-radius: 35px;
         overflow: hidden;
 
         .card__img{
             width: 100%;
-            height: 333px;
+            height: 70%;
             object-fit: contain;
             overflow: hidden;
         }
@@ -161,6 +173,22 @@
         }
     }
 
+    &.-service{
+        display: grid;
+        place-items: center;
+        max-width: 500px;
+        min-width: 400px;
+        aspect-ratio: 1/1;
+        padding: 52px;
+        border-radius: 35px;
+        overflow: hidden;
+        text-align: center;
+
+        :nth-child(n) {
+                margin: 21px auto;
+            
+        }
+    }
 }
 </style>
 
@@ -173,6 +201,7 @@ import myButton from "@/components/elements/myButton.vue"
 const props = defineProps({
     type: String,
     title: String,
+    border: String,
 
     imgSrc: String,
     imgAlt: String,
@@ -181,12 +210,19 @@ const props = defineProps({
     buttonTxt: String,
     note: String,
 
-    descriptionCourte: String
+    descriptionCourte: String,
+
+    descriptionLong: String,
+    icon: String
 })
 
 const className = computed(() => ({
     ' -produit-big': props.type === 'produit-big',
     ' -produit-small': props.type === 'produit-small',
+    ' -service': props.type === 'service',
+
+    ' -shadow': props.border === 'shadow',
+    ' -border': props.border === 'border'
 }))
 
 
