@@ -64,7 +64,7 @@
     }
 
     &.-shadow{
-        box-shadow: 0px 2px 30px 0px rgba($color-gray, 60%);
+        box-shadow: 0 2px 30px rgba($color-gray, 60%);
     }
 
     &.-produit-big{
@@ -72,6 +72,7 @@
         min-width: 400px;
         aspect-ratio: 1/1;
         border-radius: 35px;
+        background: $color-white;
         overflow: hidden;
 
         .card__img{
@@ -180,6 +181,7 @@
         min-width: 400px;
         aspect-ratio: 1/1;
         padding: 52px;
+        background: $color-white;
         border-radius: 35px;
         overflow: hidden;
         text-align: center;

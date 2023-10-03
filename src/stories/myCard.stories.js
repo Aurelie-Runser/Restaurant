@@ -100,7 +100,6 @@ export const ProduitSmallCard = {
         imgSrc: "https://placewaifu.com/image/300",
         imgAlt: "mon image",
         title: "Burger",
-        descriptionCourte: "Mushroom Sauce",
         prix: "5.15"
     }
 }
@@ -121,7 +120,6 @@ export const ServiceCard = {
         type: "service",
         border: "border",
         icon: "couverts",
-        title: "Healthy Food",
-        descriptionLong: "But I must explain to you how all this mistaken idea of denouncing pleasur and prasising pain was bron."
+        title: "Healthy Food"
     }
 }
