@@ -42,17 +42,7 @@ export const PrimaryButton = {
 }
 
 export const SecondaryButton = {
-    render: (args) => {
-        return{
-            components: {
-                myButton
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myButton v-bind="args">Hello World !</myButton>`
-        }
-    },
+    ...PrimaryButton,
     args:{
         href: "/",
         size: "regular",
@@ -62,17 +52,7 @@ export const SecondaryButton = {
 }
 
 export const TertiairButton = {
-    render: (args) => {
-        return{
-            components: {
-                myButton
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myButton v-bind="args">Hello World !</myButton>`
-        }
-    },
+    ...PrimaryButton,
     args:{
         href: "/",
         size: "regular",
@@ -82,17 +62,7 @@ export const TertiairButton = {
 }
 
 export const SmallPrimaryButton = {
-    render: (args) => {
-        return{
-            components: {
-                myButton
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myButton v-bind="args">Hello World !</myButton>`
-        }
-    },
+    ...PrimaryButton,
     args:{
         href: "/",
         size: "small",
@@ -102,17 +72,7 @@ export const SmallPrimaryButton = {
 }
 
 export const SmallSecondaryButton = {
-    render: (args) => {
-        return{
-            components: {
-                myButton
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myButton v-bind="args">Hello World !</myButton>`
-        }
-    },
+    ...PrimaryButton,
     args:{
         href: "/",
         size: "small",

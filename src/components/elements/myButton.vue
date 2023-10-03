@@ -12,32 +12,28 @@
 
 <style lang="scss" scoped>
 .button {
+    @include h5;
     background-color: $color-main;
     background: linear-gradient(lighten($color-main, 15%), $color-main);
     border: none;
     border-radius: 15px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: inline-block;
     color: $color-white;
-    font-family: $font;
-    font-size: $font_size-regular;
-    font-weight: $font_weight-semibold;
     padding: 33px 67px;
     text-decoration: none;
     word-wrap: break-word;
 
     &.-rounded {
+        @include p1;
         background: $color-main;
         border-radius: 50px;
-        font-weight: $font_weight-medium;
         padding: 26px 64px;
     }
   
     &.-small {
+        @include p2;
         padding: 14px 29px;
         background: $color-main;
-        font-size: $font_size-small;
-        font-weight: $font_weight-regular;
     }
 
     &.-icon{

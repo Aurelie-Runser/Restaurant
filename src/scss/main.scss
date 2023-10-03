@@ -11,12 +11,28 @@ section{
     padding: 50px;
 }
 
+div{
+    font-family: $font;
+    font-size: $font_size-small;
+    font-weight: $font_weight-regular;
+}
+
 h1{
-    color: $color-main;
-    font-size: $font_size-extra;
+    @include h1
 }
 
 h2{
-    color: $color-black;
-    font-size: $font_size-mega;
+    @include h2;
+}
+
+h3{
+    @include h3
+}
+
+h4{
+    @include h4
+}
+
+h5{
+    @include h5
 }
