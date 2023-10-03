@@ -1,28 +1,38 @@
 <template>
     <header class="header">
-        <a class="header__logo" href="/">
-            <img src="/Logo.png" alt="Logo de 'FOOD'">
-        </a>
-
-        <myHeaderMenu/>
-        <myHeaderSearch/>
-
+        <div class="header__content">
+            <a class="header__content__logo" href="/">
+                <img src="/Logo.png" alt="Logo de 'FOOD'">
+            </a>
+    
+            <myHeaderMenu/>
+            <myHeaderSearch/>
+        </div>
     </header>
 </template>
 
 <style lang="scss" scoped>
+
 .header{
     position: sticky;
     top: 0;
-    padding: 15px 0;
+    display: block;
+    width: 100vw;
+    margin-top: 15px;
     background: $color-white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &__logo{
-        display: block;
-        width: 100px;
+    
+    .header__content{
+        max-width: 85vw;
+        margin: auto;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        &__logo{
+            display: block;
+            width: 100px;
+        }
     }
 }
 </style>
