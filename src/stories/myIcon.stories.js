@@ -17,7 +17,7 @@ export default {
             options:["small", "medium", "big"],
         },
         bg:{
-            control: "select",
+            control: "color",
             options:["none", "black", "white", "orange", "orange-blanc", "blanc-orange"],
         },
         shadow:{
@@ -30,29 +30,7 @@ export default {
     }
 }
 
-export const camionIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
-    args:{
-        name: "camion",
-        direction: "default",
-        size: "medium",
-        bg: "none",
-        shadow: "false",
-        etoile: "none"
-    }
-}
-
-export const camionOrangeIcon = {
+export const CamionIcon = {
     render: (args) => {
         return{
             components: {
@@ -68,24 +46,26 @@ export const camionOrangeIcon = {
         name: "camion",
         direction: "default",
         size: "big",
+        bg: "none",
+        shadow: "false",
+        etoile: "none"
+    }
+}
+
+export const CamionOrangeIcon = {
+    ...CamionIcon,
+    args:{
+        name: "camion",
+        direction: "default",
+        size: "big",
         bg: "orange",
         shadow: "false",
         etoile: "none"
     }
 }
 
-export const chevronIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const ChevronIcon = {
+    ...CamionIcon,
     args:{
         name: "chevron",
         direction: "default",
@@ -96,18 +76,8 @@ export const chevronIcon = {
     }
 }
 
-export const chevronBlancIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const ChevronBlancIcon = {
+    ...CamionIcon,
     args:{
         name: "chevron",
         direction: "default",
@@ -118,18 +88,8 @@ export const chevronBlancIcon = {
     }
 }
 
-export const couvertsIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const CouvertsIcon = {
+    ...CamionIcon,
     args:{
         name: "couverts",
         direction: "default",
@@ -140,18 +100,8 @@ export const couvertsIcon = {
     }
 }
 
-export const couvertsOrangeIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const CouvertsOrangeIcon = {
+    ...CamionIcon,
     args:{
         name: "couverts",
         direction: "default",
@@ -162,18 +112,8 @@ export const couvertsOrangeIcon = {
     }
 }
 
-export const couvertsCroisesIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const CouvertsCroisesIcon = {
+    ...CamionIcon,
     args:{
         name: "couvertsCroises",
         direction: "default",
@@ -184,18 +124,8 @@ export const couvertsCroisesIcon = {
     }
 }
 
-export const couvertsCroisesOrangeIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const CouvertsCroisesOrangeIcon = {
+    ...CamionIcon,
     args:{
         name: "couvertsCroises",
         direction: "default",
@@ -206,18 +136,8 @@ export const couvertsCroisesOrangeIcon = {
     }
 }
 
-export const etoileVideIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const EtoileVideIcon = {
+    ...CamionIcon,
     args:{
         name: "etoile",
         direction: "default",
@@ -228,18 +148,8 @@ export const etoileVideIcon = {
     }
 }
 
-export const etoilePleinIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const EtoilePleinIcon = {
+    ...CamionIcon,
     args:{
         name: "etoile",
         direction: "default",
@@ -250,18 +160,8 @@ export const etoilePleinIcon = {
     }
 }
 
-export const facebookIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FacebookIcon = {
+    ...CamionIcon,
     args:{
         name: "facebook",
         direction: "default",
@@ -272,18 +172,8 @@ export const facebookIcon = {
     }
 }
 
-export const flecheDroitIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheDroitIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "default",
@@ -294,18 +184,8 @@ export const flecheDroitIcon = {
     }
 }
 
-export const flecheGaucheIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheGaucheIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "gauche",
@@ -316,18 +196,8 @@ export const flecheGaucheIcon = {
     }
 }
 
-export const flecheWhiteDroitIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheWhiteDroitIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "default",
@@ -338,18 +208,8 @@ export const flecheWhiteDroitIcon = {
     }
 }
 
-export const flecheWhiteGaucheIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheWhiteGaucheIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "gauche",
@@ -360,18 +220,8 @@ export const flecheWhiteGaucheIcon = {
     }
 }
 
-export const flecheOrangeDroitIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheOrangeDroitIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "default",
@@ -382,18 +232,8 @@ export const flecheOrangeDroitIcon = {
     }
 }
 
-export const flecheOrangeGaucheIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheOrangeGaucheIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "gauche",
@@ -404,18 +244,8 @@ export const flecheOrangeGaucheIcon = {
     }
 }
 
-export const flecheBlackIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const FlecheBlackIcon = {
+    ...CamionIcon,
     args:{
         name: "fleche",
         direction: "default",
@@ -426,18 +256,8 @@ export const flecheBlackIcon = {
     }
 }
 
-export const heureIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const HeureIcon = {
+    ...CamionIcon,
     args:{
         name: "heure",
         direction: "default",
@@ -448,18 +268,8 @@ export const heureIcon = {
     }
 }
 
-export const instagramIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const InstagramIcon = {
+    ...CamionIcon,
     args:{
         name: "instagram",
         direction: "default",
@@ -470,18 +280,8 @@ export const instagramIcon = {
     }
 }
 
-export const linkedinIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const LinkedinIcon = {
+    ...CamionIcon,
     args:{
         name: "linkedin",
         direction: "default",
@@ -492,18 +292,8 @@ export const linkedinIcon = {
     }
 }
 
-export const loupeIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const LoupeIcon = {
+    ...CamionIcon,
     args:{
         name: "loupe",
         direction: "default",
@@ -514,18 +304,8 @@ export const loupeIcon = {
     }
 }
 
-export const phoneIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const PhoneIcon = {
+    ...CamionIcon,
     args:{
         name: "phone",
         direction: "default",
@@ -536,18 +316,8 @@ export const phoneIcon = {
     }
 }
 
-export const pingIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const PingIcon = {
+    ...CamionIcon,
     args:{
         name: "ping",
         direction: "default",
@@ -558,18 +328,8 @@ export const pingIcon = {
     }
 }
 
-export const playIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const PlayIcon = {
+    ...CamionIcon,
     args:{
         name: "play",
         direction: "default",
@@ -580,18 +340,8 @@ export const playIcon = {
     }
 }
 
-export const sacIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const SacIcon = {
+    ...CamionIcon,
     args:{
         name: "sac",
         direction: "default",
@@ -602,18 +352,8 @@ export const sacIcon = {
     }
 }
 
-export const twitterIcon = {
-    render: (args) => {
-        return{
-            components: {
-                myIcon
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myIcon v-bind="args" />`
-        }
-    },
+export const TwitterIcon = {
+    ...CamionIcon,
     args:{
         name: "twitter",
         direction: "default",
