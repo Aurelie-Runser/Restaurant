@@ -1,10 +1,7 @@
 <template>
     <header class="header">
         <div class="header__content">
-            <a class="header__content__logo" href="/">
-                <img src="/Logo.png" alt="Logo de 'FOOD'">
-            </a>
-    
+            <myLogo class="header__content__logo"/>
             <myHeaderMenu/>
             <myHeaderSearch/>
         </div>
@@ -21,7 +18,7 @@
     margin-top: 15px;
     background: $color-white;
     
-    .header__content{
+    &__content{
         max-width: 85vw;
         margin: auto;
         padding: 15px 0;
@@ -38,6 +35,7 @@
 </style>
 
 <script setup>
+import myLogo from "@/components/elements/myLogo.vue"
 import myHeaderMenu from "@/components/elements/myHeaderMenu.vue"
 import myHeaderSearch from "@/components/elements/myHeaderSearch.vue"
 </script>
