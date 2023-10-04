@@ -68,11 +68,11 @@ import myIcon from '@/components/elements/myIcon.vue'
 import myEmail from '@/components/elements/myEmail.vue'
 
 defineProps({
-    title: String,
-    logo: String,
-    liens: Array,
-    texte: String,
-    icons: Array,
-    email: String
+  title: String,
+  logo: String,
+  liens: Array,
+  texte: String,
+  icons: Array,
+  email: String
 })
 </script>

@@ -52,16 +52,16 @@ import { computed } from 'vue'
 import myIcon from "@/components/elements/myIcon.vue"
 
 const props = defineProps({
-    href: String,
-    size: String,
-    variant: String,
-    icon: String
+  href: String,
+  size: String,
+  variant: String,
+  icon: String
 })
 
 const className = computed(() => ({
-    ' -rounded': props.variant === 'rounded',
-    ' -small': props.size === 'small',
-    ' -icon': props.icon === 'true'
+  ' -rounded': props.variant === 'rounded',
+  ' -small': props.size === 'small',
+  ' -icon': props.icon === 'true'
 }))
 
 

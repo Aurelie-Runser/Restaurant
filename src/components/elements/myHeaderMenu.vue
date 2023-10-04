@@ -22,9 +22,9 @@
 <script setup>
 
 const liens = [["home", "#"],
-    ["menu", "#"],
-    ["service", "#"],
-    ["shope", "#"]]
+  ["menu", "#"],
+  ["service", "#"],
+  ["shope", "#"]]
               
 
 </script>
