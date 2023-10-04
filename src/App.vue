@@ -7,6 +7,6 @@ import myFooter from "@/components/myFooter.vue"
 
 <template>
     <myHeader/>
-    <RouterView />
     <myFooter/>
+    <RouterView />
 </template>

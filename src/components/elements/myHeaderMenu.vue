@@ -1,11 +1,11 @@
 <template>
-    <div class="header__menu">
-        <nav class="header__nav">
-            <ul class="header__liste">
-                <li class="header__item" v-for="lien in liens" :key="lien"><a :href="lien[1]">{{ lien[0] }}</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="header__menu">
+    <nav class="header__nav">
+      <ul class="header__liste">
+        <li class="header__item" v-for="lien in liens" :key="lien"><a :href="lien[1]">{{ lien[0] }}</a></li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -22,9 +22,9 @@
 <script setup>
 
 const liens = [["home", "#"],
-               ["menu", "#"],
-               ["service", "#"],
-               ["shope", "#"]]
+    ["menu", "#"],
+    ["service", "#"],
+    ["shope", "#"]]
               
 
 </script>

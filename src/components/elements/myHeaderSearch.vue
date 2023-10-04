@@ -1,21 +1,21 @@
 <template>
-    <div class="header__search">
-        <div class="header__search__input">
-            <div class="input__icon">
-                <myIcon name="loupe" size="small"/>
-            </div>
-            <input type="text" size="15" placeholder="Search">
-        </div>
-        
-        <span class="header__search__separation"></span>
-
-        <div class="header__search__panier">
-            <div class="panier__notif">2</div>
-            <div class="panier__icon">
-                <myIcon name="sac" size="small"/>
-            </div>
-        </div>
+  <div class="header__search">
+    <div class="header__search__input">
+      <div class="input__icon">
+        <myIcon name="loupe" size="small"/>
+      </div>
+      <input type="text" size="15" placeholder="Search">
     </div>
+        
+    <span class="header__search__separation"></span>
+
+    <div class="header__search__panier">
+      <div class="panier__notif">2</div>
+      <div class="panier__icon">
+        <myIcon name="sac" size="small"/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
