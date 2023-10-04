@@ -7,22 +7,22 @@
     <div class="card__content">
       <div class="card__content-gauche">
         <div class="card__title">
-          <h4>{{title}}</h4>
+          <h4>{{ title }}</h4>
         </div>
-    
+
         <div class="card__button">
-          <myButton variant="rounded" size="small">{{buttonTxt}}</myButton>
+          <myButton variant="rounded" size="small">{{ buttonTxt }}</myButton>
         </div>
       </div>
 
       <div class="card__content-droit">
         <div class="card__note">
           <myIcon name="etoile" etoile="pleine" size="small" />
-          <p>{{note}}</p>
+          <p>{{ note }}</p>
         </div>
-    
+
         <div class="card__prix">
-          <p>$ {{prix}}</p>
+          <p>$ {{ prix }}</p>
         </div>
       </div>
     </div>
@@ -37,168 +37,162 @@
 
     <div class="card__content">
       <h4>{{ title }}</h4>
-      <p class="card__content__des"><slot/></p>
+      <p class="card__content__des"><slot /></p>
       <p class="card__content__prix">{{ prix }}</p>
     </div>
 
     <div class="card__buttons">
-      <myIcon name="fleche" size="medium" bg="black"/>
-      <myIcon name="fleche" size="medium" bg="white" direction="gauche"/>
+      <myIcon name="fleche" size="medium" bg="black" />
+      <myIcon name="fleche" size="medium" bg="white" direction="gauche" />
     </div>
   </div>
 
   <div v-if="type === 'service'" class="card" :class="className">
     <div class="card-service__content">
-      <myIcon :name="icon" size="big" bg="orange"/>
-      <h4>{{title}}</h4>
-      <p><slot/></p>
+      <myIcon :name="icon" size="big" bg="orange" />
+      <h4>{{ title }}</h4>
+      <p><slot /></p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-.card{
+.card {
+  &.-border {
+    border: 1px solid $color-gray;
+  }
 
-    &.-border{
-        border: 1px solid $color-gray;
+  &.-shadow {
+    box-shadow: 0 2px 30px rgba($color-gray, 60%);
+  }
+
+  &.-produit-big {
+    max-width: 500px;
+    min-width: 400px;
+    aspect-ratio: 1/1;
+    border-radius: 35px;
+    background: $color-white;
+    overflow: hidden;
+
+    .card__img {
+      width: 100%;
+      height: 70%;
+      object-fit: contain;
+      overflow: hidden;
     }
 
-    &.-shadow{
-        box-shadow: 0 2px 30px rgba($color-gray, 60%);
+    .card__content {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin: 0 32px;
+
+      &-gauche {
+        > :nth-child(n) {
+          margin-top: 16px;
+        }
+      }
+
+      &-droit {
+        text-align: right;
+
+        > :nth-child(n) {
+          margin-top: 25px;
+        }
+
+        .card__note {
+          @include p2;
+          display: flex;
+          justify-content: right;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+
+  &.-produit-small {
+    position: relative;
+    max-width: 270px;
+    min-width: 250px;
+    height: 380px;
+
+    .card__bg {
+      position: absolute;
+      z-index: -1;
+      bottom: 0;
+      width: 100%;
+      height: 275px;
+      background: $color-white;
+      border-radius: 30px;
+      box-shadow: 0px 0px 31px 0px rgba($color-gray, 80%);
     }
 
-    &.-produit-big{
-        max-width: 500px;
-        min-width: 400px;
-        aspect-ratio: 1/1;
-        border-radius: 35px;
-        background: $color-white;
-        overflow: hidden;
-
-        .card__img{
-            width: 100%;
-            height: 70%;
-            object-fit: contain;
-            overflow: hidden;
-        }
-    
-        .card__content{
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin: 0 32px;
-            
-            &-gauche{
-    
-                > :nth-child(n) {
-                    margin-top: 16px;
-                }
-            }
-            
-            &-droit{
-                text-align: right;
-    
-                > :nth-child(n) {
-                    margin-top: 25px;
-                }
-    
-                .card__note{
-                    display: flex;
-                    justify-content: right;
-                    align-items: center;
-                    gap: 10px;
-                }
-    
-                .card__prix{
-                    @include p1
-                }
-            }
-        }
+    .card__img {
+      width: 90%;
+      margin: auto;
+      object-fit: contain;
+      overflow: hidden;
+      filter: drop-shadow(0 8px 8px $color-gray);
     }
 
-    &.-produit-small{
-        position: relative;
-        max-width: 270px;
-        min-width: 250px;
-        height: 380px;
+    .card__content {
+      text-align: center;
+      margin: 24px auto;
 
-        .card__bg{
-            position: absolute;
-            z-index: -1;
-            bottom: 0;
-            width: 100%;
-            height: 275px;
-            background: $color-white;
-            border-radius: 30px;
-            box-shadow: 0px 0px 31px 0px rgba($color-gray, 80%);
+      > * + * {
+        margin: 11px;
+      }
+
+      .card__content__des {
+        @include p1;
+      }
+
+      .card__content__prix {
+        @include h5;
+
+        &::before {
+          content: '$ ';
+          color: #d92f26;
         }
-
-        .card__img{
-            width: 90%;
-            margin: auto;
-            object-fit: contain;
-            overflow: hidden;
-            filter: drop-shadow(0 8px 8px $color-gray);
-        }
-    
-        .card__content{
-            text-align: center;
-            margin: 24px auto;
-
-            > * + * {
-                margin: 11px;
-            }
-
-            .card__content__des{
-                @include p1;
-            }
-
-            .card__content__prix{
-                @include h5;
-
-                &::before{
-                    content: "$ ";
-                    color: #d92f26;
-                }
-            }
-        }
-
-        .card__buttons{
-            position: absolute;
-            bottom: -20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15%;
-        }
+      }
     }
 
-    &.-service{
-        display: grid;
-        place-items: center;
-        max-width: 500px;
-        min-width: 400px;
-        aspect-ratio: 1/1;
-        padding: 52px;
-        background: $color-white;
-        border-radius: 35px;
-        overflow: hidden;
-        text-align: center;
-
-        :nth-child(n) {
-                margin: 21px auto;
-            
-        }
+    .card__buttons {
+      position: absolute;
+      bottom: -20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15%;
     }
+  }
+
+  &.-service {
+    display: grid;
+    place-items: center;
+    max-width: 500px;
+    min-width: 400px;
+    aspect-ratio: 1/1;
+    padding: 52px;
+    background: $color-white;
+    border-radius: 35px;
+    overflow: hidden;
+    text-align: center;
+
+    :nth-child(n) {
+      margin: 21px auto;
+    }
+  }
 }
 </style>
 
 <script setup>
 import { computed } from 'vue'
 
-import myIcon from "@/components/elements/myIcon.vue"
-import myButton from "@/components/elements/myButton.vue"
+import myIcon from '@/components/elements/myIcon.vue'
+import myButton from '@/components/elements/myButton.vue'
 
 const props = defineProps({
     type: String,
@@ -223,6 +217,4 @@ const className = computed(() => ({
     ' -shadow': props.border === 'shadow',
     ' -border': props.border === 'border'
 }))
-
-
 </script>
