@@ -1,55 +1,55 @@
 <template>
   <a v-if="href" :href="href" class="button" :class="className">
     <slot></slot>
-    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange"/>
+    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange" />
   </a>
 
   <button v-else class="button" :class="className">
     <slot></slot>
-    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange"/>
+    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange" />
   </button>
 </template>
 
 <style lang="scss" scoped>
 .button {
-    @include h5;
-    background-color: $color-main;
-    background: linear-gradient(lighten($color-main, 15%), $color-main);
-    border: none;
-    border-radius: 15px;
-    display: inline-block;
-    color: $color-white;
-    padding: 33px 67px;
-    text-decoration: none;
-    word-wrap: break-word;
+  @include h5;
+  background-color: $color-main;
+  background: linear-gradient(lighten($color-main, 15%), $color-main);
+  border: none;
+  border-radius: 15px;
+  display: inline-block;
+  color: $color-white;
+  padding: 33px 67px;
+  text-decoration: none;
+  text-transform: capitalize;
+  word-wrap: break-word;
 
-    &.-rounded {
-        @include p1;
-        background: $color-main;
-        border-radius: 50px;
-        padding: 26px 64px;
-    }
-  
-    &.-small {
-        @include p2;
-        padding: 14px 29px;
-        background: $color-main;
-    }
+  &.-rounded {
+    @include p1;
+    background: $color-main;
+    border-radius: 50px;
+    padding: 26px 64px;
+  }
 
-    &.-icon{
-        display: inline-flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 20px;
-    }
+  &.-small {
+    @include p2;
+    padding: 14px 29px;
+    background: $color-main;
+  }
 
+  &.-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
 }
 </style>
 
 <script setup>
 import { computed } from 'vue'
-import myIcon from "@/components/elements/myIcon.vue"
+import myIcon from '@/components/elements/myIcon.vue'
 
 const props = defineProps({
   href: String,
@@ -63,6 +63,4 @@ const className = computed(() => ({
   ' -small': props.size === 'small',
   ' -icon': props.icon === 'true'
 }))
-
-
 </script>
