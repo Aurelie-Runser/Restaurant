@@ -1,21 +1,20 @@
 <template>
   <div class="title">
-    <h2>{{h2}}</h2>
-    <h3>{{h3}}</h3>
+    <h2>{{ h2 }}</h2>
+    <h3>{{ h3 }}</h3>
   </div>
 </template>
 
 <style lang="scss" scoped>
+.title {
+  margin: 57px auto;
+  text-align: center;
+  line-height: 1.5;
 
-.title{
-    margin: 57px auto;
-    text-align: center;
-    line-height: 1.5;
-
-    h2{
-        @include p2;
-        color: $color-main;
-    }
+  h2 {
+    @include p2;
+    color: $color-main;
+  }
 }
 </style>
 
