@@ -11,7 +11,7 @@
         </div>
 
         <div class="card__button">
-          <myButton variant="rounded" size="small">{{ buttonTxt }}</myButton>
+          <myButton variant="rounded" size="small">add to Cart</myButton>
         </div>
       </div>
 
@@ -202,7 +202,6 @@ const props = defineProps({
   imgAlt: String,
 
   prix: String,
-  buttonTxt: String,
   note: String,
 
   icon: String
