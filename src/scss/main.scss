@@ -21,8 +21,7 @@ section{
 
 div{
     font-family: $font;
-    font-size: $font_size-small;
-    font-weight: $font_weight-regular;
+    @include p1
 }
 
 h1{
