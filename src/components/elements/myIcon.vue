@@ -1,7 +1,7 @@
 <template>
-    <i class="icon" :class="className">
-        <component :is="getIcon"/>
-    </i>
+  <i class="icon" :class="className">
+    <component :is="getIcon"/>
+  </i>
 </template>
   
 <style lang="scss" scoped>
@@ -118,60 +118,60 @@ const props = defineProps({
 
 const getIcon = computed(() => {
     switch (props.name) {
-        case 'camion':
-            return camionIcon
-        case 'chevron':
-            return chevronIcon
-        case 'couverts':
-            return couvertsIcon
-        case 'couvertsCroises':
-            return couvertsCroisesIcon
-        case 'etoile':
-            return etoileIcon
-        case 'facebook':
-            return facebookIcon
-        case 'fleche':
-            return flecheIcon
-        case 'heure':
-            return heureIcon
-        case 'instagram':
-            return instagramIcon
-        case 'linkedin':
-            return linkedinIcon
-        case 'loupe':
-            return loupeIcon
-        case 'phone':
-            return phoneIcon
-        case 'ping':
-            return pingIcon
-        case 'play':
-            return playIcon
-        case 'sac':
-            return sacIcon
-        case 'twitter':
-            return twitterIcon
-        default:
-            return twitterIcon
+    case 'camion':
+        return camionIcon
+    case 'chevron':
+        return chevronIcon
+    case 'couverts':
+        return couvertsIcon
+    case 'couvertsCroises':
+        return couvertsCroisesIcon
+    case 'etoile':
+        return etoileIcon
+    case 'facebook':
+        return facebookIcon
+    case 'fleche':
+        return flecheIcon
+    case 'heure':
+        return heureIcon
+    case 'instagram':
+        return instagramIcon
+    case 'linkedin':
+        return linkedinIcon
+    case 'loupe':
+        return loupeIcon
+    case 'phone':
+        return phoneIcon
+    case 'ping':
+        return pingIcon
+    case 'play':
+        return playIcon
+    case 'sac':
+        return sacIcon
+    case 'twitter':
+        return twitterIcon
+    default:
+        return twitterIcon
     }
 })
 
 const className = computed(() => ({
-  ' -direction-gauche': props.direction === 'gauche',
+    ' -direction-gauche': props.direction === 'gauche',
 
-  ' -size -small': props.size === 'small',
-  ' -size -medium': props.size === 'medium',
-  ' -size -big': props.size === 'big',
+    ' -size -small': props.size === 'small',
+    ' -size -medium': props.size === 'medium',
+    ' -size -big': props.size === 'big',
 
-  ' -bg -black': props.bg === 'black',
-  ' -bg -white': props.bg === 'white',
-  ' -bg -orange': props.bg === 'orange',
-  ' -bg -orange-blanc': props.bg === 'orange-blanc',
-  ' -bg -blanc-orange': props.bg === 'blanc-orange',
+    ' -bg -black': props.bg === 'black',
+    ' -bg -white': props.bg === 'white',
+    ' -bg -orange': props.bg === 'orange',
+    ' -bg -orange-blanc': props.bg === 'orange-blanc',
+    ' -bg -blanc-orange': props.bg === 'blanc-orange',
 
-  ' -shadow': props.shadow === 'true',
+    ' -shadow': props.shadow === 'true',
 
-  ' -etoile -pleine': props.etoile === 'pleine',
-  ' -etoile -vide': props.etoile === 'vide',
-  ' -etoile -none': props.etoile === 'none'
+    ' -etoile -pleine': props.etoile === 'pleine',
+    ' -etoile -vide': props.etoile === 'vide',
+    ' -etoile -none': props.etoile === 'none'
 }))
 </script>

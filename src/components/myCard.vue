@@ -1,59 +1,59 @@
 <template>
-    <div v-if="type === 'produit-big'" class="card" :class="className">
-        <div class="card__img">
-            <img :src="imgSrc" :alt="imgAlt" />
-        </div>
+  <div v-if="type === 'produit-big'" class="card" :class="className">
+    <div class="card__img">
+      <img :src="imgSrc" :alt="imgAlt" />
+    </div>
 
-        <div class="card__content">
-            <div class="card__content-gauche">
-                <div class="card__title">
-                    <h4>{{title}}</h4>
-                </div>
+    <div class="card__content">
+      <div class="card__content-gauche">
+        <div class="card__title">
+          <h4>{{title}}</h4>
+        </div>
     
-                <div class="card__button">
-                    <myButton variant="rounded" size="small">{{buttonTxt}}</myButton>
-                </div>
-            </div>
+        <div class="card__button">
+          <myButton variant="rounded" size="small">{{buttonTxt}}</myButton>
+        </div>
+      </div>
 
-            <div class="card__content-droit">
-                <div class="card__note">
-                    <myIcon name="etoile" etoile="pleine" size="small" />
-                    <p>{{note}}</p>
-                </div>
+      <div class="card__content-droit">
+        <div class="card__note">
+          <myIcon name="etoile" etoile="pleine" size="small" />
+          <p>{{note}}</p>
+        </div>
     
-                <div class="card__prix">
-                    <p>$ {{prix}}</p>
-                </div>
-            </div>
+        <div class="card__prix">
+          <p>$ {{prix}}</p>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-if="type === 'produit-small'" class="card" :class="className">
+    <div class="card__bg"></div>
+
+    <div class="card__img">
+      <img :src="imgSrc" :alt="imgAlt" />
     </div>
 
-    <div v-if="type === 'produit-small'" class="card" :class="className">
-        <div class="card__bg"></div>
-
-        <div class="card__img">
-            <img :src="imgSrc" :alt="imgAlt" />
-        </div>
-
-        <div class="card__content">
-            <h4>{{ title }}</h4>
-            <p class="card__content__des"><slot/></p>
-            <p class="card__content__prix">{{ prix }}</p>
-        </div>
-
-        <div class="card__buttons">
-            <myIcon name="fleche" size="medium" bg="black"/>
-            <myIcon name="fleche" size="medium" bg="white" direction="gauche"/>
-        </div>
+    <div class="card__content">
+      <h4>{{ title }}</h4>
+      <p class="card__content__des"><slot/></p>
+      <p class="card__content__prix">{{ prix }}</p>
     </div>
 
-    <div v-if="type === 'service'" class="card" :class="className">
-        <div class="card-service__content">
-            <myIcon :name="icon" size="big" bg="orange"/>
-            <h4>{{title}}</h4>
-            <p><slot/></p>
-        </div>
+    <div class="card__buttons">
+      <myIcon name="fleche" size="medium" bg="black"/>
+      <myIcon name="fleche" size="medium" bg="white" direction="gauche"/>
     </div>
+  </div>
+
+  <div v-if="type === 'service'" class="card" :class="className">
+    <div class="card-service__content">
+      <myIcon :name="icon" size="big" bg="orange"/>
+      <h4>{{title}}</h4>
+      <p><slot/></p>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
