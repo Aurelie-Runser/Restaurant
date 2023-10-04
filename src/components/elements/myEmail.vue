@@ -73,11 +73,11 @@ import myIcon from '@/components/elements/myIcon.vue'
 import myButton from '@/components/elements/myButton.vue'
 
 const props = defineProps({
-    size: String,
+  size: String,
 })
 
 const className = computed(() => ({
-    ' -small': props.size === 'small',
-    ' -big': props.size === 'big',
+  ' -small': props.size === 'small',
+  ' -big': props.size === 'big',
 }))
 </script>

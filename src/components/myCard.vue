@@ -113,8 +113,7 @@
 
   &.-produit-small {
     position: relative;
-    max-width: 270px;
-    min-width: 250px;
+    width: 250px;
     height: 380px;
 
     .card__bg {
@@ -195,26 +194,26 @@ import myIcon from '@/components/elements/myIcon.vue'
 import myButton from '@/components/elements/myButton.vue'
 
 const props = defineProps({
-    type: String,
-    title: String,
-    border: String,
+  type: String,
+  title: String,
+  border: String,
 
-    imgSrc: String,
-    imgAlt: String,
+  imgSrc: String,
+  imgAlt: String,
 
-    prix: String,
-    buttonTxt: String,
-    note: String,
+  prix: String,
+  buttonTxt: String,
+  note: String,
 
-    icon: String
+  icon: String
 })
 
 const className = computed(() => ({
-    ' -produit-big': props.type === 'produit-big',
-    ' -produit-small': props.type === 'produit-small',
-    ' -service': props.type === 'service',
+  ' -produit-big': props.type === 'produit-big',
+  ' -produit-small': props.type === 'produit-small',
+  ' -service': props.type === 'service',
 
-    ' -shadow': props.border === 'shadow',
-    ' -border': props.border === 'border'
+  ' -shadow': props.border === 'shadow',
+  ' -border': props.border === 'border'
 }))
 </script>
