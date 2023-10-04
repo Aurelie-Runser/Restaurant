@@ -25,7 +25,6 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 10px;
   }
-
 }
 </style>
 
@@ -37,8 +36,6 @@ const props = defineProps({
   typeGrid: String,
   gridCards: Object // Déclarer le type de la prop gridCards comme un tableau
 })
-
-console.log(props.gridCards)
 
 const className = computed(() => ({
   ' -big': props.typeGrid === 'big',

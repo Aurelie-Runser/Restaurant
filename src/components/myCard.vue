@@ -33,7 +33,7 @@
       <div class="card__content">
         <h4>{{ dataCard ? dataCard.title : title }}</h4>
 
-        <p v-if="dataCard" class="card__content__des">{{dataCard.des}}</p>
+        <p v-if="dataCard" class="card__content__des">{{ dataCard.des }}</p>
         <p v-else class="card__content__des"><slot /></p>
 
         <p class="card__content__prix">{{ dataCard ? dataCard.prix : prix }}</p>
@@ -54,7 +54,7 @@
     <div class="card-service__content">
       <myIcon :name="dataCard ? dataCard.icon : icon" size="big" bg="orange" />
       <h4>{{ dataCard ? dataCard.title : title }}</h4>
-      
+
       <p v-if="dataCard">{{ dataCard.des }}</p>
       <p v-else><slot /></p>
     </div>
