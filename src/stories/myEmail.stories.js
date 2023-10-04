@@ -30,6 +30,6 @@ export const EmailSmall = {
 export const EmailBig = {
     ...EmailSmall,
     args:{
-        size: "Big"
+        size: "big"
     }
 }

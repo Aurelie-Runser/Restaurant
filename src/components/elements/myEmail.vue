@@ -12,11 +12,11 @@
   align-items: center;
   width: fit-content;
   height: fit-content;
+  background: $color-white;
   
   &.-small{
       padding: 8px 10px;
       border-radius: 32.5px;
-      background: $color-white;
       box-shadow: 0 0 15px rgba($color-gray, 30%);
 
       .email__input {
@@ -24,11 +24,11 @@
         border: none;
         width: 200px;
     
-        .email:focus {
+        &:focus {
           outline: none;
         }
     
-        .email::placeholder {
+        &::placeholder {
           color: darken($color-gray, 50%);
         }
       }
@@ -46,11 +46,11 @@
         width: 300px;
         border: none;
     
-        .email:focus {
+        &:focus {
           outline: none;
         }
     
-        .email::placeholder {
+        &::placeholder {
           color: darken($color-gray, 50%);
         }
       }
