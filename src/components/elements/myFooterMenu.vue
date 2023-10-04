@@ -7,7 +7,7 @@
     <nav v-if="liens" class="footer__nav">
       <ul class="footer__list">
         <li class="footer__item" v-for="lien in liens" :key="lien">
-          <a v-if="lien.href" :href="lien.txt"> {{ lien.txt }} </a>
+          <a v-if="lien.href" :href="lien.href"> {{ lien.txt }} </a>
           <p v-else>{{ lien.txt }}</p>
         </li>
       </ul>
