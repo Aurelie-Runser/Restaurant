@@ -7,7 +7,6 @@
 
 <style lang="scss" scoped>
 .title {
-  margin: 57px auto;
   text-align: center;
   line-height: 1.5;
 

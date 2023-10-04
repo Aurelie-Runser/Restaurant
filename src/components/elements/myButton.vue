@@ -22,6 +22,7 @@
   padding: 33px 67px;
   text-decoration: none;
   text-transform: capitalize;
+  width: fit-content;
   word-wrap: break-word;
 
   &.-rounded {
