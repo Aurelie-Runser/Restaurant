@@ -50,7 +50,8 @@ const menuFooter = [
             {txt: "1234 Country Club Ave", href: ""},
             {txt: "NC 123456, London, UK", href: ""},
             {txt: "+0123 456 7891", href: ""}
-        ]
+        ],
+        email: "small"
     },
 ]
 </script>

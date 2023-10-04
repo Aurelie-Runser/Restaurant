@@ -1,7 +1,7 @@
 import myFooterMenu from "@/components/elements/myFooterMenu.vue"
 
 export default {
-    title: "components/myFooterMenu",
+    title: "elements/myFooterMenu",
     component: myFooterMenu,
     argTypes: {
         title:{
@@ -14,10 +14,13 @@ export default {
             control: "object",
         },
         texte:{
-            control: "object",
+            control: "text",
         },
         icons:{
             control: "object",
+        },
+        email:{
+            control: "text",
         },
     }
 }
@@ -43,21 +46,25 @@ export const MenuFooterSimple = {
         ]        
     }
 }
+
 export const MenuFooterLogo = {
-    render: (args) => {
-        return{
-            components: {
-                myFooterMenu
-            },
-            setup(){
-                return {args}
-            },
-            template: `<myFooterMenu v-bind="args"/>`
-        }
-    },
+    ...MenuFooterSimple,
     args:{
         logo: "/Logo.png",
         texte: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo libero viverra dapibus odio sit malesuada in quis. Arcu tristique elementum viverra integer id.",
         icons: ["facebook", "twitter", "linkedin", "instagram"]
+    }
+}
+
+export const MenuFooterContact = {
+    ...MenuFooterSimple,
+    args:{
+        title: "Contact Us",
+        liens:[
+            {txt: "1234 Country Club Ave", href: ""},
+            {txt: "NC 123456, London, UK", href: ""},
+            {txt: "+0123 456 7891", href: ""}
+        ],
+        email: "small"    
     }
 }

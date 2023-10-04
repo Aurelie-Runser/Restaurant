@@ -18,6 +18,8 @@
     <div v-if="icons" class="footer__icons">
       <myIcon v-for="icon in icons" :key="icon" :name="icon" size="medium" bg="orange" />
     </div>
+
+    <myEmail v-if="email" :size="email" class="footer__email"/>
   </div>
 </template>
 
@@ -26,9 +28,9 @@
   width: fit-content;
   max-width: 380px;
   height: fit-content;
-//   border: red solid 2px;
+  //   border: red solid 2px;
 
-  &__logo{
+  &__logo {
     width: 180px;
     margin-bottom: 30px;
   }
@@ -41,10 +43,9 @@
   .footer__texte {
     @include p1;
     color: darken($color_gray, 20%);
-    
-}
+  }
 
-.footer__nav{
+  .footer__nav {
     line-height: 1.75;
   }
 
@@ -54,18 +55,24 @@
     gap: 18px;
     margin: 20px 0;
   }
+
+  .footer__email{
+    margin-top: 30px;
+  }
 }
 </style>
 
 <script setup>
 import myLogo from '@/components/elements/myLogo.vue'
 import myIcon from '@/components/elements/myIcon.vue'
+import myEmail from '@/components/elements/myEmail.vue'
 
 defineProps({
     title: String,
     logo: String,
     liens: Array,
     texte: String,
-    icons: Array
+    icons: Array,
+    email: String
 })
 </script>
