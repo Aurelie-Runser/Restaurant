@@ -6,7 +6,7 @@ import myFooter from "@/components/myFooter.vue"
 </script>
 
 <template>
-    <myHeader/>
-    <myFooter/>
-    <RouterView />
+  <myHeader/>
+  <RouterView />
+  <myFooter/>
 </template>
