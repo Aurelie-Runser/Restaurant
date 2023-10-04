@@ -1,11 +1,11 @@
 <template>
-    <header class="header">
-        <div class="header__content">
-            <myLogo class="header__content__logo"/>
-            <myHeaderMenu/>
-            <myHeaderSearch/>
-        </div>
-    </header>
+  <header class="header">
+    <div class="header__content">
+      <myLogo class="header__content__logo"/>
+      <myHeaderMenu/>
+      <myHeaderSearch/>
+    </div>
+  </header>
 </template>
 
 <style lang="scss" scoped>

@@ -5,6 +5,6 @@ import myHeader from "@/components/myHeader.vue"
 </script>
 
 <template>
-    <myHeader/>
-    <RouterView />
+  <myHeader/>
+  <RouterView />
 </template>

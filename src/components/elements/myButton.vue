@@ -1,13 +1,13 @@
 <template>
-    <a v-if="href" :href="href" class="button" :class="className">
-        <slot></slot>
-        <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange"/>
-    </a>
+  <a v-if="href" :href="href" class="button" :class="className">
+    <slot></slot>
+    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange"/>
+  </a>
 
-    <button v-else class="button" :class="className">
-        <slot></slot>
-        <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange"/>
-    </button>
+  <button v-else class="button" :class="className">
+    <slot></slot>
+    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange"/>
+  </button>
 </template>
 
 <style lang="scss" scoped>
