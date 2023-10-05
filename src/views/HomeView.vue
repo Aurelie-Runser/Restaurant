@@ -15,6 +15,8 @@
 
       <myGridCards typeGrid="big" :gridCards="gridServices" />
     </section>
+
+    <mySectionEmail/>
   </body>
 </template>
 
@@ -32,10 +34,11 @@
 </style>
 
 <script setup>
+import mySectionEmail from '@/components/layouts/myLayoutEmail.vue'
 import myTitleSection from '@/components/elements/myTitleSection.vue'
 import myButton from '@/components/elements/myButton.vue'
 import myGridCards from '@/components/myGirdCards.vue'
-import myCard from '@/components/myCard.vue'
+// import myCard from '@/components/myCard.vue'
 
 const gridProduitsBig = [
   {
@@ -125,28 +128,28 @@ const gridServices = [
 
 ]
 
-const gridProduitsSmall = [
-  {
-    type: 'produit-small',
-    imgSrc: '/Burger.png',
-    imgAlt: 'Photo de Gyro Sandwitc',
-    title: 'Gyro Sandwhic',
-    prix: '15.00',
-    des: 'LALAL'
-  },
-  {
-    type: 'produit-small',
-    imgSrc: '/Cake.png',
-    imgAlt: 'Photo de Enchilade',
-    title: 'Enchilade',
-    prix: '25.50'
-  },
-  {
-    type: 'produit-small',
-    imgSrc: '/Nugets.png',
-    imgAlt: 'Photo de Green Beans',
-    title: 'Green Beans',
-    prix: '12.00'
-  }
-]
+// const gridProduitsSmall = [
+//   {
+//     type: 'produit-small',
+//     imgSrc: '/Burger.png',
+//     imgAlt: 'Photo de Gyro Sandwitc',
+//     title: 'Gyro Sandwhic',
+//     prix: '15.00',
+//     des: 'LALAL'
+//   },
+//   {
+//     type: 'produit-small',
+//     imgSrc: '/Cake.png',
+//     imgAlt: 'Photo de Enchilade',
+//     title: 'Enchilade',
+//     prix: '25.50'
+//   },
+//   {
+//     type: 'produit-small',
+//     imgSrc: '/Nugets.png',
+//     imgAlt: 'Photo de Green Beans',
+//     title: 'Green Beans',
+//     prix: '12.00'
+//   }
+// ]
 </script>

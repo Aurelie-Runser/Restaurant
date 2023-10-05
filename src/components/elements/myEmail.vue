@@ -10,9 +10,10 @@
 .email {
   display: flex;
   align-items: center;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
   background: $color-white;
+  max-width: 100%;
   
   &.-small{
       padding: 8px 10px;
@@ -43,7 +44,7 @@
       .email__input {
         @include p1;
         margin: 25px 34px;
-        width: 300px;
+        width: 100%;
         border: none;
     
         &:focus {
