@@ -1,35 +1,9 @@
-# IntergrationMaquette
+# Exercice d'Intergration de Maquette
 
-This template should help get you started developing with Vue 3 in Vite.
+En 2 semaines de cours de développement front-end, au MMI de Montbéliard, nous avons appris : 
+- les bases du framework **Vue3** (et les différences par rapport à Vue2 apprit les années précédentes)
+- le langage Sass/**Scss**
+- la notion d'**Atomic Design**
+- **Git**, soit créer des branchs, des pull-request et merges...
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Pour nous entrainer à maitriser tout cela, nous devions intégrer une maquette fournie par note professeur en prêtant une grande attention à la réaliser en atomic design, à utiliser la méthode BEM et utiliser Git comme si nous travaillions à plusieurs (ex : ne rien push sur la branch main).
