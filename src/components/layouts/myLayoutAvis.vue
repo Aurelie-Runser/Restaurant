@@ -20,11 +20,14 @@
     justify-content: space-between;
     align-items: center;
     gap: 45px;
-    margin-top: 57px;
 
     .sectionAvis__img {
       width: 45%;
       flex: none;
+      display: none;
+      @include x-large-up {
+        display: block;
+      }
     }
   }
 }

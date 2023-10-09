@@ -54,7 +54,7 @@
   }
 
   &__avis {
-    width: 90%;
+    width: 85%;
     margin: auto;
     text-align: center;
   }
