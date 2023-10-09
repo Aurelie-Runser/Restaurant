@@ -119,8 +119,8 @@
   &.-produit-small {
     position: relative;
     max-width: 300px;
-    min-width: 250px;
-    aspect-ratio: 3/4;
+    min-width: 200px;
+    aspect-ratio: 2/3;
     z-index: 0;
 
     .card__bg {
@@ -133,7 +133,7 @@
       height: 80%;
       background: $color-white;
       border-radius: 30px;
-      box-shadow: 0px 0px 31px 0px rgba($color-gray, 80%);
+      box-shadow: 0px 0px 20px 0px rgba($color-gray, 50%);
     }
 
     .card__img {
@@ -147,7 +147,7 @@
 
     .card__content {
       text-align: center;
-      margin: 24px auto;
+      margin: 15% auto;
 
       > * + * {
         margin: 11px;

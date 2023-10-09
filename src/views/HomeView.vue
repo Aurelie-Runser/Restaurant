@@ -1,5 +1,6 @@
 <template>
   <body class="mainbody">
+    <myHero/>
 
     <section class="sectionGrid">
       <myTitleSection h2="Product" h3="Most Popular Items" />
@@ -40,6 +41,7 @@
 import { onMounted } from 'vue'
 import axios from 'axios'
 
+import myHero from '@/components/layouts/myHero.vue'
 import mySectionEmail from '@/components/layouts/myLayoutEmail.vue'
 import mySectionAvis from '@/components/layouts/myLayoutAvis.vue'
 
@@ -169,28 +171,4 @@ const gridServices = [
   }
 ]
 
-// const gridProduitsSmall = [
-//   {
-//     type: 'produit-small',
-//     imgSrc: '/Burger.png',
-//     imgAlt: 'Photo de Gyro Sandwitc',
-//     title: 'Gyro Sandwhic',
-//     prix: '15.00',
-//     des: 'LALAL'
-//   },
-//   {
-//     type: 'produit-small',
-//     imgSrc: '/Cake.png',
-//     imgAlt: 'Photo de Enchilade',
-//     title: 'Enchilade',
-//     prix: '25.50'
-//   },
-//   {
-//     type: 'produit-small',
-//     imgSrc: '/Nugets.png',
-//     imgAlt: 'Photo de Green Beans',
-//     title: 'Green Beans',
-//     prix: '12.00'
-//   }
-// ]
 </script>

@@ -22,8 +22,8 @@
   }
 
   &.-small {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 50px 10px;
   }
 }
 </style>
