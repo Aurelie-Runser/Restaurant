@@ -1,7 +1,6 @@
 <template>
   <body class="mainbody">
 
-
     <section class="sectionGrid">
       <myTitleSection h2="Product" h3="Most Popular Items" />
 
@@ -18,9 +17,9 @@
       <myGridCards typeGrid="big" :gridCards="gridServices" />
     </section>
 
-    <mySectionAvis/>
+    <mySectionAvis />
 
-    <mySectionEmail/>
+    <mySectionEmail />
   </body>
 </template>
 
@@ -35,15 +34,53 @@
     margin: auto;
   }
 }
-
 </style>
 
 <script setup>
+import { onMounted } from 'vue'
+import axios from 'axios'
+
 import mySectionEmail from '@/components/layouts/myLayoutEmail.vue'
 import mySectionAvis from '@/components/layouts/myLayoutAvis.vue'
+
 import myTitleSection from '@/components/elements/myTitleSection.vue'
-import myButton from '@/components/elements/myButton.vue'
 import myGridCards from '@/components/myGirdCards.vue'
+import myButton from '@/components/elements/myButton.vue'
+
+// const getAPI = async () => {
+//   const response = await fetch('http://localhost:3000/recipes')
+//   return response.json
+// }
+
+// const getAPIThen = async () => {
+//   await fetch('http://localhost:3000/recipes')
+//     .then((response) => response.json())
+//     .then((data) => console.log('fetch + then', data))
+// }
+
+// const getRecetteFetch = async () => {
+//   fetch('http://localhost:3000/recipes')
+//     .then((response) => response.json())
+//     .then((recettes) => {
+//       fetch('http://localhost:3000/recipes/cuisine/1')
+//         .then((response) => response.json())
+//         .then((recettesParCuisine) =>
+//           console.log('recette de cuisine 1', recettes, recettesParCuisine)
+//         )
+//     })
+// }
+
+const getRecette = async () => {
+  const recettes = await axios.get('http://localhost:3000/recipes')
+  const cuisineParRecettes = await axios.get('http://localhost:3000/recipes/cuisine/1')
+  return { recettes: recettes, cuisineParRecettes: cuisineParRecettes }
+}
+
+onMounted(async () => {
+  // console.log(await getAPI()),
+  console.log(await getRecette())
+  // await getAPIThen()
+})
 
 const gridProduitsBig = [
   {
@@ -130,7 +167,6 @@ const gridServices = [
           mistaken idea of denouncing pleasur and
           prasising pain was bron.`
   }
-
 ]
 
 // const gridProduitsSmall = [
