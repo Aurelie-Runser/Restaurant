@@ -9,6 +9,7 @@
 .title {
   text-align: center;
   line-height: 1.5;
+  margin-bottom: 57px;
 
   h2 {
     @include p2;

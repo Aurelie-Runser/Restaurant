@@ -1,5 +1,7 @@
 <template>
   <body class="mainbody">
+
+
     <section class="sectionGrid">
       <myTitleSection h2="Product" h3="Most Popular Items" />
 
@@ -16,6 +18,8 @@
       <myGridCards typeGrid="big" :gridCards="gridServices" />
     </section>
 
+    <mySectionAvis/>
+
     <mySectionEmail/>
   </body>
 </template>
@@ -31,14 +35,15 @@
     margin: auto;
   }
 }
+
 </style>
 
 <script setup>
 import mySectionEmail from '@/components/layouts/myLayoutEmail.vue'
+import mySectionAvis from '@/components/layouts/myLayoutAvis.vue'
 import myTitleSection from '@/components/elements/myTitleSection.vue'
 import myButton from '@/components/elements/myButton.vue'
 import myGridCards from '@/components/myGirdCards.vue'
-// import myCard from '@/components/myCard.vue'
 
 const gridProduitsBig = [
   {

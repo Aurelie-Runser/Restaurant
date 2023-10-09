@@ -15,6 +15,10 @@
   min-height: 100vh;
 }
 
+section{
+  margin: 135px 0;
+}
+
 div {
   font-family: $font;
   @include p1;
