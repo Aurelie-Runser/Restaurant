@@ -1,5 +1,8 @@
 <template>
   <body class="mainbody">
+
+    <myCardAvis/>
+
     <section class="sectionGrid">
       <myTitleSection h2="Product" h3="Most Popular Items" />
 
@@ -38,7 +41,7 @@ import mySectionEmail from '@/components/layouts/myLayoutEmail.vue'
 import myTitleSection from '@/components/elements/myTitleSection.vue'
 import myButton from '@/components/elements/myButton.vue'
 import myGridCards from '@/components/myGirdCards.vue'
-// import myCard from '@/components/myCard.vue'
+import myCardAvis from '@/components/myCardAvis.vue'
 
 const gridProduitsBig = [
   {
