@@ -34,15 +34,6 @@
       transform: translateX(-50%);
     }
   }
-
-  &__carrousel{
-    display: flex;
-    width: 100%;
-
-    >*{
-        flex: none;
-    }
-  }
 }
 </style>
 
