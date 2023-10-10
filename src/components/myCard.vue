@@ -62,14 +62,22 @@
 </template>
 
 <style lang="scss" scoped>
-.card {
-  &.-border {
-    border: 1px solid $color-gray;
+
+@keyframes animImg{
+  0%{
+    transform: rotate(0deg);
   }
 
-  &.-shadow {
-    box-shadow: 0 2px 30px rgba($color-gray, 60%);
+  25%{
+    transform: rotate(10deg);
   }
+
+  75%{
+    transform: rotate(-10deg);
+  }
+}
+
+.card {
 
   &.-produit-big {
     max-width: 500px;
@@ -78,12 +86,21 @@
     border-radius: 35px;
     background: $color-white;
     overflow: hidden;
+    box-shadow: 0 2px 30px rgba($color-gray, 40%);
 
     .card__img {
       width: 100%;
       height: 65%;
       object-fit: contain;
       overflow: hidden;
+
+      img {
+        transition: all ease-in-out 0.5s;
+      }
+    }
+
+    &:hover .card__img img {
+      transform: scale(1.1);
     }
 
     .card__content {
@@ -138,11 +155,14 @@
 
     .card__img {
       width: 90%;
-      // z-index: 10;
       margin: auto;
       object-fit: contain;
       overflow: hidden;
       filter: drop-shadow(0 8px 8px $color-gray);
+    }
+
+    &:hover .card__img{
+      animation: animImg 2s 0s linear infinite;
     }
 
     .card__content {
@@ -191,6 +211,13 @@
     border-radius: 35px;
     overflow: hidden;
     text-align: center;
+    border: 1px solid $color-gray;
+    transition: all 0.5s ease-in-out;
+
+    &:hover{
+      border: transparent 1px solid;
+      box-shadow: 0 2px 30px rgba($color-gray, 60%);
+    }
 
     :nth-child(n) {
       margin: 21px auto;
@@ -208,7 +235,6 @@ import myButton from '@/components/elements/myButton.vue'
 const props = defineProps({
   type: String,
   title: String,
-  border: String,
 
   imgSrc: String,
   imgAlt: String,
@@ -227,8 +253,5 @@ const className = computed(() => ({
   ' -produit-small':
     props.type === 'produit-small' || (props.dataCard && props.dataCard.type === 'produit-small'),
   ' -service': props.type === 'service' || (props.dataCard && props.dataCard.type === 'service'),
-
-  ' -shadow': props.border === 'shadow' || (props.dataCard && props.dataCard.border === 'shadow'),
-  ' -border': props.border === 'border' || (props.dataCard && props.dataCard.border === 'border')
 }))
 </script>
