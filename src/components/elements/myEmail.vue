@@ -10,10 +10,9 @@
 .email {
   display: flex;
   align-items: center;
-  width: 100%;
+  width: fit-content;
   height: fit-content;
   background: $color-white;
-  max-width: 100%;
   
   &.-small{
       padding: 8px 10px;

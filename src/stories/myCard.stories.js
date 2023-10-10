@@ -11,10 +11,6 @@ export default {
     title: {
       control: 'text'
     },
-    border: {
-      control: 'select',
-      options: ['none', 'border', 'shadow']
-    },
 
     imgSrc: {
       control: 'text',
@@ -66,7 +62,6 @@ export const ProduitBigCard = {
   },
   args: {
     type: 'produit-big',
-    border: 'shadow',
     imgSrc: 'https://placewaifu.com/image/500',
     imgAlt: 'mon image',
     title: 'Green Beans',
@@ -89,7 +84,6 @@ export const ProduitSmallCard = {
   },
   args: {
     type: 'produit-small',
-    border: 'none',
     imgSrc: 'https://placewaifu.com/image/300',
     imgAlt: 'mon image',
     title: 'Burger',
@@ -111,7 +105,6 @@ export const ServiceCard = {
   },
   args: {
     type: 'service',
-    border: 'border',
     icon: 'couverts',
     title: 'Healthy Food'
   }
