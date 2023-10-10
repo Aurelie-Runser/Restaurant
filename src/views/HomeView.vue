@@ -1,6 +1,8 @@
 <template>
   <body class="mainbody">
-    <myHero/>
+    <myHero />
+
+    <myCardInfo />
 
     <section class="sectionGrid">
       <myTitleSection h2="Product" h3="Most Popular Items" />
@@ -21,6 +23,18 @@
     <mySectionAvis />
 
     <mySectionEmail />
+
+    <ul>
+      <li v-for="(recette, index) in recettes" :key="index">
+        <p v-if="index < 4">{{ recette.recipe_name }}</p>
+      </li>
+    </ul>
+    <br/>
+    <ul>
+      <li v-for="(recette, index) in recettes" :key="index">
+        <p v-if="index > 4">{{ recette.recipe_name }}</p>
+      </li>
+    </ul>
   </body>
 </template>
 
@@ -38,10 +52,11 @@
 </style>
 
 <script setup>
-import { onMounted } from 'vue'
+import { computed, onMounted, ref } from 'vue'
 import axios from 'axios'
 
 import myHero from '@/components/layouts/myHero.vue'
+import myCardInfo from '@/components/myCardInfo.vue'
 import mySectionEmail from '@/components/layouts/myLayoutEmail.vue'
 import mySectionAvis from '@/components/layouts/myLayoutAvis.vue'
 
@@ -49,39 +64,31 @@ import myTitleSection from '@/components/elements/myTitleSection.vue'
 import myGridCards from '@/components/myGirdCards.vue'
 import myButton from '@/components/elements/myButton.vue'
 
-// const getAPI = async () => {
-//   const response = await fetch('http://localhost:3000/recipes')
-//   return response.json
-// }
+const API = axios.create({
+  baseURL: import.meta.env.VITE_API_URL
+})
 
-// const getAPIThen = async () => {
-//   await fetch('http://localhost:3000/recipes')
-//     .then((response) => response.json())
-//     .then((data) => console.log('fetch + then', data))
-// }
-
-// const getRecetteFetch = async () => {
-//   fetch('http://localhost:3000/recipes')
-//     .then((response) => response.json())
-//     .then((recettes) => {
-//       fetch('http://localhost:3000/recipes/cuisine/1')
-//         .then((response) => response.json())
-//         .then((recettesParCuisine) =>
-//           console.log('recette de cuisine 1', recettes, recettesParCuisine)
-//         )
-//     })
-// }
+const recettes = ref([])
 
 const getRecette = async () => {
-  const recettes = await axios.get('http://localhost:3000/recipes')
-  const cuisineParRecettes = await axios.get('http://localhost:3000/recipes/cuisine/1')
-  return { recettes: recettes, cuisineParRecettes: cuisineParRecettes }
+  const response = await API.get('/recipes')
+  return response.data
 }
 
+const recettesNames = computed(() => {
+  return recettes.value.map((item) => item.recipe_name)
+})
+
+const spaghettiRecettes = computed(() => {
+  return recettes.value.filter((item) => item.recipe_name.toLowerCase().includes('spaghetti'))
+})
+
+const hasGoalId = computed(() => {
+  return recettes.value.some((item) => item.goal_id === 1)
+})
+
 onMounted(async () => {
-  // console.log(await getAPI()),
-  console.log(await getRecette())
-  // await getAPIThen()
+  recettes.value = await getRecette()
 })
 
 const gridProduitsBig = [
@@ -170,5 +177,4 @@ const gridServices = [
           prasising pain was bron.`
   }
 ]
-
 </script>
