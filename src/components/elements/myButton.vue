@@ -24,6 +24,7 @@
   text-transform: capitalize;
   width: fit-content;
   word-wrap: break-word;
+  cursor: pointer;
 
   &.-rounded {
     @include p1;

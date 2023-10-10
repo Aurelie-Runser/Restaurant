@@ -24,17 +24,6 @@
 
     <mySectionEmail />
 
-    <ul>
-      <li v-for="(recette, index) in recettes" :key="index">
-        <p v-if="index < 4">{{ recette.recipe_name }}</p>
-      </li>
-    </ul>
-    <br/>
-    <ul>
-      <li v-for="(recette, index) in recettes" :key="index">
-        <p v-if="index > 4">{{ recette.recipe_name }}</p>
-      </li>
-    </ul>
   </body>
 </template>
 
@@ -148,8 +137,7 @@ const gridServices = [
     icon: 'couvertsCroises',
     title: 'Qualityfull Food',
     des: `But I must explain to you how all this
-          mistaken idea of denouncing pleasur and
-          prasising pain was bron.`
+          mistaken idea.`
   },
   {
     type: 'service',

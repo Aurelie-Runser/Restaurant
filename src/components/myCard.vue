@@ -1,13 +1,13 @@
 <template>
   <div v-if="type === 'produit-big'" class="card" :class="className">
     <div class="card__img">
-      <img :src="dataCard ? dataCard.imgSrc : imgSrc" :alt="dataCard ? dataCard.imgAlt : imgAlt" />
+      <img :src="imgSrc" :alt="imgAlt" />
     </div>
 
     <div class="card__content">
       <div class="card__content-gauche">
         <div class="card__title">
-          <h4>{{ dataCard ? dataCard.title : title }}</h4>
+          <h4>{{ title }}</h4>
         </div>
 
         <div class="card__button">
@@ -18,11 +18,11 @@
       <div class="card__content-droit">
         <div class="card__note">
           <myIcon name="etoile" etoile="pleine" size="small" />
-          <p>{{ dataCard ? dataCard.note : note }}</p>
+          <p>{{ note }}</p>
         </div>
 
         <div class="card__prix">
-          <p>{{ dataCard ? dataCard.prix : prix }}</p>
+          <p>{{ prix }}</p>
         </div>
       </div>
     </div>
@@ -31,12 +31,12 @@
   <div v-if="type === 'produit-small'" class="card" :class="className">
     <div class="card__bg">
       <div class="card__content">
-        <h4>{{ dataCard ? dataCard.title : title }}</h4>
+        <h4>{{ title }}</h4>
 
-        <p v-if="dataCard" class="card__content__des">{{ dataCard.des }}</p>
+        <p v-if="des" class="card__content__des">{{ des }}</p>
         <p v-else class="card__content__des"><slot /></p>
 
-        <p class="card__content__prix">{{ dataCard ? dataCard.prix : prix }}</p>
+        <p class="card__content__prix">{{ prix }}</p>
       </div>
 
       <div class="card__buttons">
@@ -46,39 +46,37 @@
     </div>
 
     <div class="card__img">
-      <img :src="dataCard ? dataCard.imgSrc : imgSrc" :alt="dataCard ? dataCard.imgAlt : imgAlt" />
+      <img :src="imgSrc" :alt="imgAlt" />
     </div>
   </div>
 
   <div v-if="type === 'service'" class="card" :class="className">
     <div class="card-service__content">
-      <myIcon :name="dataCard ? dataCard.icon : icon" size="big" bg="orange" />
-      <h4>{{ dataCard ? dataCard.title : title }}</h4>
+      <myIcon :name="icon" size="big" bg="orange" />
+      <h4>{{ title }}</h4>
 
-      <p v-if="dataCard">{{ dataCard.des }}</p>
+      <p v-if="des">{{ des }}</p>
       <p v-else><slot /></p>
     </div>
   </div>
 </template>
 
 <style lang="scss" scoped>
-
-@keyframes animImg{
-  0%{
+@keyframes animImg {
+  0% {
     transform: rotate(0deg);
   }
 
-  25%{
+  25% {
     transform: rotate(10deg);
   }
 
-  75%{
+  75% {
     transform: rotate(-10deg);
   }
 }
 
 .card {
-
   &.-produit-big {
     max-width: 500px;
     min-width: 335px;
@@ -161,7 +159,7 @@
       filter: drop-shadow(0 8px 8px $color-gray);
     }
 
-    &:hover .card__img{
+    &:hover .card__img {
       animation: animImg 2s 0s linear infinite;
     }
 
@@ -197,6 +195,10 @@
       justify-content: center;
       align-items: center;
       gap: 15%;
+
+      > * {
+        cursor: pointer;
+      }
     }
   }
 
@@ -214,7 +216,7 @@
     border: 1px solid $color-gray;
     transition: all 0.5s ease-in-out;
 
-    &:hover{
+    &:hover {
       border: transparent 1px solid;
       box-shadow: 0 2px 30px rgba($color-gray, 60%);
     }
@@ -243,15 +245,13 @@ const props = defineProps({
   note: String,
 
   icon: String,
+  des: String,
 
-  dataCard: Object
 })
 
 const className = computed(() => ({
-  ' -produit-big':
-    props.type === 'produit-big' || (props.dataCard && props.dataCard.type === 'produit-big'),
-  ' -produit-small':
-    props.type === 'produit-small' || (props.dataCard && props.dataCard.type === 'produit-small'),
-  ' -service': props.type === 'service' || (props.dataCard && props.dataCard.type === 'service'),
+  ' -produit-big': props.type === 'produit-big',
+  ' -produit-small': props.type === 'produit-small',
+  ' -service': props.type === 'service'
 }))
 </script>

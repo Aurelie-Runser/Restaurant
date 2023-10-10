@@ -3,7 +3,7 @@
     <myCard
       v-for="cardData in gridCards"
       :key="cardData"
-      :dataCard="cardData"
+      v-bind="cardData"
       :type="cardData.type"
     />
   </div>
