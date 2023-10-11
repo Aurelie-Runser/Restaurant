@@ -7,10 +7,10 @@
     <section class="sectionGrid">
       <myTitleSection h2="Product" h3="Most Popular Items" />
 
-      <myGridCards typeGrid="big" :gridCards="gridProduitsBig" />
+      <myGridCards typeGrid="big" :gridCards="gridProduitsBigDinamique" />
 
       <div class="buttonCenter">
-        <myButton href="#" variant="rounded" icon="true">see more product</myButton>
+        <myButton @click="moreCard()" variant="rounded" icon="true" v-if="recettesEncore">see more product</myButton>
       </div>
     </section>
 
@@ -23,7 +23,6 @@
     <mySectionAvis />
 
     <mySectionEmail />
-
   </body>
 </template>
 
@@ -41,8 +40,9 @@
 </style>
 
 <script setup>
+import {useRoute} from "vue-router"
 import { computed, onMounted, ref } from 'vue'
-import axios from 'axios'
+import {API} from '@/utils/axios'
 
 import myHero from '@/components/layouts/myHero.vue'
 import myCardInfo from '@/components/myCardInfo.vue'
@@ -53,31 +53,49 @@ import myTitleSection from '@/components/elements/myTitleSection.vue'
 import myGridCards from '@/components/myGirdCards.vue'
 import myButton from '@/components/elements/myButton.vue'
 
-const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-})
+// const recettes = ref([])
 
-const recettes = ref([])
+// const getRecette = async () => {
+//   const response = await API.get('/recette')
+//   return response.data
+// }
 
-const getRecette = async () => {
-  const response = await API.get('/recipes')
-  return response.data
+// const recettesNames = computed(() => {
+//   return recettes.value.map((item) => item.recipe_name)
+// })
+
+// const spaghettiRecettes = computed(() => {
+//   return recettes.value.filter((item) => item.recipe_name.toLowerCase().includes('spaghetti'))
+// })
+
+// const hasGoalId = computed(() => {
+//   return recettes.value.some((item) => item.goal_id === 1)
+// })
+
+// const route = useRoute()
+// console.log(route)
+
+// onMounted(async () => {
+//   recettes.value = await getRecette()
+// })
+
+const gridPage = ref(1)
+
+const moreCard = () =>{
+  gridPage.value++
 }
 
-const recettesNames = computed(() => {
-  return recettes.value.map((item) => item.recipe_name)
+const recettesReactives = computed(() => {
+  const nbrCard = 1
+  return recettes.value.slice(4, 4 + nbrCard * gridPage.value)
 })
 
-const spaghettiRecettes = computed(() => {
-  return recettes.value.filter((item) => item.recipe_name.toLowerCase().includes('spaghetti'))
+const gridProduitsBigDinamique = computed(() => {
+  return gridProduitsBig.slice(0, 0+3*gridPage.value)
 })
 
-const hasGoalId = computed(() => {
-  return recettes.value.some((item) => item.goal_id === 1)
-})
-
-onMounted(async () => {
-  recettes.value = await getRecette()
+const recettesEncore = computed(() => {
+  return gridProduitsBigDinamique.value.length < gridProduitsBig.length
 })
 
 const gridProduitsBig = [
@@ -87,7 +105,8 @@ const gridProduitsBig = [
     imgAlt: 'Photo de Gyro Sandwitc',
     title: 'Gyro Sandwhic',
     prix: '15.00',
-    note: '4.9'
+    note: '4.9',
+    lien: "gyro-sandwhic"
   },
   {
     type: 'produit-big',
@@ -95,7 +114,9 @@ const gridProduitsBig = [
     imgAlt: 'Photo de Enchilade',
     title: 'Enchilade',
     prix: '25.50',
-    note: '5.0'
+    note: '5.0',
+    lien: "enchilade"
+
   },
   {
     type: 'produit-big',
@@ -103,7 +124,9 @@ const gridProduitsBig = [
     imgAlt: 'Photo de Green Beans',
     title: 'Green Beans',
     prix: '12.00',
-    note: '4.9'
+    note: '4.9',
+    lien: "green-beans"
+
   },
   {
     type: 'produit-big',
@@ -111,7 +134,9 @@ const gridProduitsBig = [
     imgAlt: 'Photo de Pizza',
     title: 'Pizza',
     prix: '18.50',
-    note: '5.0'
+    note: '5.0',
+    lien: "pizza"
+
   },
   {
     type: 'produit-big',
@@ -119,7 +144,9 @@ const gridProduitsBig = [
     imgAlt: 'Photo de Chicken Pot Pie',
     title: 'Chicken Pot Pie',
     prix: '25.00',
-    note: '4.9'
+    note: '4.9',
+    lien: "chicken-pot-pie"
+
   },
   {
     type: 'produit-big',
@@ -127,7 +154,9 @@ const gridProduitsBig = [
     imgAlt: 'Photo de Green Salad',
     title: 'Green Salad',
     prix: '15.00',
-    note: '4.9'
+    note: '4.9',
+    lien: "green-salad"
+
   }
 ]
 

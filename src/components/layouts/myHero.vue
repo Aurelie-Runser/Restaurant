@@ -30,7 +30,7 @@
       <div class="sectionHero__droit-bg"></div>
 
       <div class="sectionHero__droit-grid">
-        <myGridCards typeGrid="small" :gridCards="gridProduits" />
+        <myGridCards typeGrid="small" :gridCards="gridProduitsSmall" />
       </div>
     </div>
   </section>
@@ -121,9 +121,15 @@
 </style>
 
 <script setup>
+import { computed } from 'vue'
+
 import myGridCards from '@/components/myGirdCards.vue'
 import myButton from '@/components/elements/myButton.vue'
 import myIcon from '@/components/elements/myIcon.vue'
+
+const gridProduitsSmall = computed(() => {
+  return gridProduits.slice(0, 4)
+})
 
 const gridProduits = [
   {

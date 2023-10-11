@@ -11,7 +11,9 @@
         </div>
 
         <div class="card__button">
-          <myButton variant="rounded" size="small">add to Cart</myButton>
+          <RouterLink :to="`/recette/${lien}`">
+            <myButton variant="rounded" size="small">add to Cart</myButton>
+          </RouterLink>
         </div>
       </div>
 
@@ -246,6 +248,8 @@ const props = defineProps({
 
   icon: String,
   des: String,
+
+  lien: String
 
 })
 
