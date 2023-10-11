@@ -27,6 +27,8 @@
         <myGridCards typeGrid="big" :gridCards="gridServices" />
       </section>
 
+      <myWork />
+
       <mySectionAvis />
 
       <mySectionEmail />
