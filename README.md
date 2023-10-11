@@ -1,9 +1,75 @@
-# Exercice d'Intergration de Maquette
+# Nuxt 3 Minimal Starter
 
-En 2 semaines de cours de développement front-end, au MMI de Montbéliard, nous avons appris : 
-- les bases du framework **Vue3** (et les différences par rapport à Vue2 apprit les années précédentes)
-- le langage Sass/**Scss**
-- la notion d'**Atomic Design**
-- **Git**, soit créer des branchs, des pull-request et merges...
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-Pour nous entrainer à maitriser tout cela, nous devions intégrer une maquette fournie par note professeur en prêtant une grande attention à la réaliser en atomic design, à utiliser la méthode BEM et utiliser Git comme si nous travaillions à plusieurs (ex : ne rien push sur la branch main).
+## Setup
+
+Make sure to install the dependencies:
+
+```bash
+# npm
+npm install
+
+# pnpm
+pnpm install
+
+# yarn
+yarn install
+
+# bun
+bun install
+```
+
+## Development Server
+
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm run dev
+
+# yarn
+yarn dev
+
+# bun
+bun run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
