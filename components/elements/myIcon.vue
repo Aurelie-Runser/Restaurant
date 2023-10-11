@@ -88,8 +88,6 @@
 </style>
   
 <script setup>
-import { computed } from 'vue'
-
 import camionIcon from '@/components/icons/camionIcon.vue'
 import chevronIcon from '@/components/icons/chevronIcon.vue'
 import couvertsCroisesIcon from '@/components/icons/couvertsCroisesIcon.vue'

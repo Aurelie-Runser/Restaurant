@@ -50,8 +50,6 @@
 </style>
 
 <script setup>
-import { computed } from 'vue'
-import myIcon from '@/components/elements/myIcon.vue'
 
 const props = defineProps({
   href: String,

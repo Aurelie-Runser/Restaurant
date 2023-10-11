@@ -29,8 +29,6 @@
 </style>
 
 <script setup>
-import { computed } from 'vue'
-import myCard from '@/components/myCard.vue'
 
 const props = defineProps({
   typeGrid: String,

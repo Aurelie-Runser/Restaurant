@@ -52,5 +52,4 @@
 </style>
 
 <script setup>
-import myEmail from '@/components/elements/myEmail.vue'
 </script>

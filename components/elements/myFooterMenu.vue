@@ -1,6 +1,6 @@
 <template>
   <div class="footer__menu">
-    <myLogo v-if="logo" class="footer__menu__logo"/>
+    <myLogo v-if="logo" class="footer__menu__logo" />
 
     <h4 v-if="title" class="footer__menu__title">{{ title }}</h4>
 
@@ -16,10 +16,16 @@
     <p v-if="texte" class="footer__texte">{{ texte }}</p>
 
     <div v-if="icons" class="footer__icons">
-      <myIcon v-for="icon in icons" :key="icon" :name="icon" size="medium" bg="orange" />
+      <myIcon
+        v-for="icon in icons"
+        :key="icon"
+        :name="icon"
+        size="medium"
+        bg="orange"
+      />
     </div>
 
-    <myEmail v-if="email" :size="email" class="footer__email"/>
+    <myEmail v-if="email" :size="email" class="footer__email" />
   </div>
 </template>
 
@@ -56,23 +62,19 @@
     margin: 20px 0;
   }
 
-  .footer__email{
+  .footer__email {
     margin-top: 30px;
   }
 }
 </style>
 
 <script setup>
-import myLogo from '@/components/elements/myLogo.vue'
-import myIcon from '@/components/elements/myIcon.vue'
-import myEmail from '@/components/elements/myEmail.vue'
-
 defineProps({
   title: String,
   logo: String,
   liens: Array,
   texte: String,
   icons: Array,
-  email: String
-})
+  email: String,
+});
 </script>

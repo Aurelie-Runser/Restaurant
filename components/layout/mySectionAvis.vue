@@ -34,7 +34,4 @@
 </style>
 
 <script setup>
-import myTitleSection from '@/components/elements/myTitleSection.vue'
-
-import myCarrouselCards from '@/components/myCarrouselCards.vue'
 </script>

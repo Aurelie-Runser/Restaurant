@@ -18,7 +18,6 @@
 </style>
 
 <script setup>
-import myFooterMenu from "@/components/elements/myFooterMenu.vue"
 
 const menuFooter = [
   {

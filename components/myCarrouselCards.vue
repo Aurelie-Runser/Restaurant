@@ -38,6 +38,4 @@
 </style>
 
 <script setup>
-import myCardAvis from '@/components/myCardAvis.vue'
-import myIcon from '@/components/elements/myIcon.vue'
 </script>

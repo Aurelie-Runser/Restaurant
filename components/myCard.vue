@@ -233,9 +233,6 @@
 <script setup>
 import { computed } from 'vue'
 
-import myIcon from '@/components/elements/myIcon.vue'
-import myButton from '@/components/elements/myButton.vue'
-
 const props = defineProps({
   type: String,
   title: String,

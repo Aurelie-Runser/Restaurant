@@ -35,7 +35,4 @@
 </style>
 
 <script setup>
-import myLogo from '@/components/elements/myLogo.vue'
-import myHeaderMenu from '@/components/elements/myHeaderMenu.vue'
-import myHeaderSearch from '@/components/elements/myHeaderSearch.vue'
 </script>

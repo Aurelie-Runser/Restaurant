@@ -82,5 +82,4 @@
 </style>
 
 <script setup>
-import myIcon from "@/components/elements/myIcon.vue"
 </script>

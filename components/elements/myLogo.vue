@@ -1,7 +1,7 @@
 <template>
   <div>
-    <a href="/">
-      <img src="/Logo.png" alt="Logo de 'FOOD'">
-    </a>
+    <RouterLink to="/">
+      <img src="/Logo.png" alt="Logo de 'FOOD'" />
+    </RouterLink>
   </div>
 </template>

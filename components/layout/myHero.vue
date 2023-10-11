@@ -121,11 +121,7 @@
 </style>
 
 <script setup>
-import { computed } from 'vue'
-
 import myGridCards from '@/components/myGirdCards.vue'
-import myButton from '@/components/elements/myButton.vue'
-import myIcon from '@/components/elements/myIcon.vue'
 
 const gridProduitsSmall = computed(() => {
   return gridProduits.slice(0, 4)
