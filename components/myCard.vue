@@ -24,7 +24,7 @@
         </div>
 
         <div class="card__prix">
-          <p>{{ prix }}</p>
+          <p>$ {{ prix }}</p>
         </div>
       </div>
     </div>
@@ -231,8 +231,6 @@
 </style>
 
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
   type: String,
   title: String,
