@@ -6,23 +6,23 @@
         <img src="/BikeDelivery.jpg" alt="illustration de livraison" />
       </div>
 
-      <h1 class="sectionHero__gauche-title">
-        The Fastest Delivery <br />
-        In <span>Your City</span>
-      </h1>
+      <!-- <h1 class="sectionHero__gauche-title">
+        {{ home.data.hero_title[0].text }}
+      </h1> -->
+      <PrismicRichText class="sectionHero__gauche-title" :field="title"/>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed proin amet a
-        vestibulum enim volutpat lacus. Volutpat arcu sit sed tortor etiam volutpat ipsum.
-      </p>
+      <!-- <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo, sed
+        proin amet a vestibulum enim volutpat lacus. Volutpat arcu sit sed
+        tortor etiam volutpat ipsum.
+      </p> -->
+      <PrismicRichText :field="text"/>
 
       <div class="sectionHero__gauche-buttons">
-        <myButton>order now</myButton>
-
-        <div class="button-play">
-          <myIcon name="play" size="big" bg="blanc-orange" shadow="true" />
-          <p>Order Process</p>
+        <div v-for="b in buttons" :key="b">
+          <myButton :variant="b.button_type">{{b.button_label}}</myButton>
         </div>
+        
       </div>
     </div>
 
@@ -36,7 +36,7 @@
   </section>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .sectionHero {
   margin: 0;
   display: flex;
@@ -75,8 +75,9 @@
 
     &-title {
       margin: 70px 0 50px 0;
+      text-transform: capitalize;
 
-      span {
+      strong {
         color: $color-main;
       }
     }
@@ -84,17 +85,11 @@
     &-buttons {
       margin-top: 90px;
       display: flex;
+      align-items: center;
       gap: 50px;
 
-      .button-play {
+      > *{
         flex: none;
-        display: flex;
-        align-items: center;
-        gap: 25px;
-
-        p {
-          @include h4;
-        }
       }
     }
   }
@@ -121,44 +116,51 @@
 </style>
 
 <script setup>
-import myGridCards from '@/components/myGirdCards.vue'
+
+import myGridCards from "@/components/myGirdCards.vue";
+
+const props = defineProps({
+  title: Array,
+  text: Array,
+  buttons: Array
+})
 
 const gridProduitsSmall = computed(() => {
-  return gridProduits.slice(0, 4)
-})
+  return gridProduits.slice(0, 4);
+});
 
 const gridProduits = [
   {
-    type: 'produit-small',
-    imgSrc: '/Burger.png',
+    type: "produit-small",
+    imgSrc: "/Burger.png",
     imgAlt: "Photo d'un Burger",
-    title: 'Burger',
-    prix: '5.15',
-    des: 'Mushroom Sauce'
+    title: "Burger",
+    prix: "5.15",
+    des: "Mushroom Sauce",
   },
   {
-    type: 'produit-small',
-    imgSrc: '/FoodCombo.png',
-    imgAlt: 'Photo de Food Combo',
-    title: 'Food Combo',
-    prix: '9.15',
-    des: 'Mushroom Sauce'
+    type: "produit-small",
+    imgSrc: "/FoodCombo.png",
+    imgAlt: "Photo de Food Combo",
+    title: "Food Combo",
+    prix: "9.15",
+    des: "Mushroom Sauce",
   },
   {
-    type: 'produit-small',
-    imgSrc: '/Pizza.png',
-    imgAlt: 'Photo de Pizza',
-    title: 'Pizza',
-    prix: '6.15',
-    des: 'Mushroom Sauce'
+    type: "produit-small",
+    imgSrc: "/Pizza.png",
+    imgAlt: "Photo de Pizza",
+    title: "Pizza",
+    prix: "6.15",
+    des: "Mushroom Sauce",
   },
   {
-    type: 'produit-small',
-    imgSrc: '/Cake.png',
-    imgAlt: 'Photo de Cake',
-    title: 'Cake',
-    prix: '5.15',
-    des: 'Mushroom Sauce'
-  }
-]
+    type: "produit-small",
+    imgSrc: "/Cake.png",
+    imgAlt: "Photo de Cake",
+    title: "Cake",
+    prix: "5.15",
+    des: "Mushroom Sauce",
+  },
+];
 </script>

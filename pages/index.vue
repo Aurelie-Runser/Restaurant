@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mainbody">
-      <myHero />
+      <myHero :title="home.data.hero_title" :text="home.data.hero_texte" :buttons="home.data.hero_buttons"/>
 
       <myCardInfo />
 
@@ -50,6 +50,13 @@
 </style>
 
 <script setup>
+const { client } = usePrismic();
+const { data: home } = await useAsyncData("home", () =>
+  client.getSingle("homepage")
+);
+
+console.log(home);
+
 import myGridCards from '@/components/myGirdCards.vue'
 
 const gridPage = ref(1)
@@ -57,11 +64,6 @@ const gridPage = ref(1)
 const moreCard = () =>{
   gridPage.value++
 }
-
-const recettesReactives = computed(() => {
-  const nbrCard = 1
-  return recettes.value.slice(4, 4 + nbrCard * gridPage.value)
-})
 
 const gridProduitsBigDinamique = computed(() => {
   return gridProduitsBig.slice(0, 0+3*gridPage.value)
