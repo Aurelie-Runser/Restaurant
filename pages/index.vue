@@ -51,11 +51,12 @@
 
 <script setup>
 const { client } = usePrismic();
-const { data: home } = await useAsyncData("home", () =>
+const { data: home, error } = await useAsyncData("home", () =>
   client.getSingle("homepage")
-);
-
-console.log(home);
+)
+if (!home.value || error.value){
+  throw createError({statusCode: 404, statusMessage: "La page d'accueil est introuvable"})
+}
 
 import myGridCards from '@/components/myGirdCards.vue'
 

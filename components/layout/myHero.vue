@@ -20,7 +20,7 @@
 
       <div class="sectionHero__gauche-buttons">
         <div v-for="b in buttons" :key="b">
-          <myButton :variant="b.button_type">{{b.button_label}}</myButton>
+          <myButton :variant="b.button_type" :href="b.button_link.url">{{b.button_label}}</myButton>
         </div>
         
       </div>
@@ -116,18 +116,27 @@
 </style>
 
 <script setup>
-
 import myGridCards from "@/components/myGirdCards.vue";
+
+const env = useRuntimeConfig()
 
 const props = defineProps({
   title: Array,
   text: Array,
-  buttons: Array
+  buttons: Array,
 })
 
 const gridProduitsSmall = computed(() => {
   return gridProduits.slice(0, 4);
 });
+
+const {data: recettes} = await useAsyncData("recettes", async () => {
+  return $fetch(env.public.apiRecetteUrl + "/recipes")
+})
+
+// const getRecettes = async () => {
+//   await client.getGamepads("/recipes")
+// }
 
 const gridProduits = [
   {
