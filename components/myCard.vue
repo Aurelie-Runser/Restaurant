@@ -10,10 +10,14 @@
           <h4>{{ title }}</h4>
         </div>
 
-        <div class="card__button">
-          <RouterLink :to="`/recettes/${lien}`">
-            <myButton variant="rounded" size="small">add to Cart</myButton>
-          </RouterLink>
+        <div class="card__button" v-if="!store.cart.includes(recipe_id)">
+          <!-- <RouterLink :to="`/recettes/${lien}`"> -->
+            <myButton variant="rounded" size="small"  @click="store.addToCart(recipe_id)">add to Cart</myButton>
+          <!-- </RouterLink> -->
+        </div>
+
+        <div class="card__button" v-if="store.cart.includes(recipe_id)">
+            <myButton variant="rounded" size="small" @click="store.removeFromCart(recipe_id)">remove to Cart</myButton>
         </div>
       </div>
 
@@ -85,6 +89,7 @@
   &.-produit-big {
     max-width: 500px;
     min-width: 335px;
+    // height: fit-content;
     aspect-ratio: 1/1;
     border-radius: 35px;
     background: $color-white;
@@ -234,7 +239,11 @@
 </style>
 
 <script setup>
+import { useGlobalStore } from "@/stores/global.js"
+const store = useGlobalStore()
+
 const props = defineProps({
+  recipe_id: Number,
   type: String,
   title: String,
 
