@@ -3,7 +3,7 @@
     <myTitleSection h2="Testimonials" h3="Our Happy Client Says" />
 
     <div class="sectionAvis__content">
-      <myCarrouselCards />
+      <myCarrouselCards :donnees="donnees" />
       <img
         class="sectionAvis__img"
         src="/FritesBurgers.png"
@@ -34,4 +34,8 @@
 </style>
 
 <script setup>
+
+const props = defineProps({
+  donnees: Object
+})
 </script>

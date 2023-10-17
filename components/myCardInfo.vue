@@ -1,62 +1,57 @@
 <template>
   <section class="cardsInfo">
-    <div class="cardsInfo__card">
-      <myIcon name="heure" size="medium" bg="orange-blanc"/>
-      <h5>Today 10:00am - 10:00pm</h5>
-      <p>Working time</p>
-    </div>
-
-    <span class="cardsInfo__separateur"></span>
-
-    <div class="cardsInfo__card">
-      <myIcon name="ping" size="medium" bg="orange-blanc"/>
-      <h5>Washington, D.C., DC,USA</h5>
-      <p>Our Location</p>
-    </div>
-
-    <span class="cardsInfo__separateur"></span>
-
-    <div class="cardsInfo__card">
-      <myIcon name="phone" size="medium" bg="orange-blanc"/>
-      <h5>+0123 456 7891</h5>
-      <p>Phone Number</p>
+    <div class="cardsInfo__card" v-for="(c, index) in cardsInfo">
+      <myIcon :name="c.info_icon" size="medium" bg="orange-blanc" />
+      <PrismicRichText :field="c.info_title" />
+      <PrismicRichText class="p2" :field="c.info_desc" />
+      <span class="separateur" v-if="index + 1 < cardsInfo.length"></span>
     </div>
   </section>
 </template>
 
 <style lang="scss" scoped>
-.cardsInfo{
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 1600px;
-    height: min-content;
-    border-radius: 50px;
-    box-shadow: 0px 0px 50px 0px rgba($color-gray, 20%);
-    
-    &__card{
-        flex: 1 1 0%;
-        padding: 60px;
-        text-align: center;
+.cardsInfo {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1600px;
+  height: min-content;
+  border-radius: 50px;
+  box-shadow: 0px 0px 50px 0px rgba($color-gray, 20%);
 
-        h5{
-            margin: 12px 0 6px 0;
-        }
+  &__card {
+    flex: 1 1 0%;
+    position: relative;
+    padding: 60px;
+    text-align: center;
 
-        p{
-            @include p2
-        }
-
+    > * {
+      margin: 12px 0 6px 0;
     }
 
-    &__separateur{
-        flex: none;
-        width: 1.5px;
-        height: 160px;
-        background: $color-gray;
+    .p2 {
+      @include p2;
     }
+  }
+
+  .separateur {
+    flex: none;
+    position: absolute;
+    top: 45%;
+    right: 0;
+    transform: translateY(-50%);
+    display: block;
+    width: 1px;
+    height: 70%;
+    background: $color-gray;
+  }
 }
 </style>
 
 <script setup>
+const env = useRuntimeConfig();
+
+const props = defineProps({
+  cardsInfo: Object,
+});
 </script>

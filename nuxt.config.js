@@ -4,11 +4,22 @@ export default defineNuxtConfig({
   // empecher Nuxt de préfixer les composants
   components: [
     {
-      path: '~/components',
-      pathPrefix: false
-    }
+      path: "~/components",
+      pathPrefix: false,
+    },
   ],
+  
+  modules: ["@nuxtjs/prismic"],
+  prismic: { endpoint: process.env.NUXT_PRISMIC_ENDPOINT },
+  
   css: ["@/scss/main.scss"],
+
+  runtimeConfig: {
+    public: {
+      apiRecetteUrl: ""
+    }
+  },
+
   vite: {
     css: {
       preprocessorOptions: {

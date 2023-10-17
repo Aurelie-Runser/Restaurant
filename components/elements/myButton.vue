@@ -1,12 +1,16 @@
 <template>
   <a v-if="href" :href="href" class="button" :class="className">
+    <myIcon v-if="variant === 'video'" name="play" size="big" bg="blanc-orange" shadow="true"/>
+
     <slot></slot>
-    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange" />
+    <myIcon  v-if="icon"  class="button-icon"  name="chevron"  size="medium"  bg="blanc-orange"/>
   </a>
 
   <button v-else class="button" :class="className">
+    <myIcon  v-if="variant === 'video'"  name="play"  size="big"  bg="blanc-orange"  shadow="true"/>
+
     <slot></slot>
-    <myIcon v-if="icon" class="button-icon" name="chevron" size="medium" bg="blanc-orange" />
+    <myIcon  v-if="icon"  class="button-icon"  name="chevron"  size="medium"  bg="blanc-orange"/>
   </button>
 </template>
 
@@ -33,6 +37,18 @@
     padding: 26px 64px;
   }
 
+  &.-video {
+    @include h4;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    width: fit-content;
+    height: fit-content;
+    padding: 0;
+    background: transparent;
+    color: $color-black;
+  }
+
   &.-small {
     @include p2;
     padding: 14px 29px;
@@ -50,17 +66,17 @@
 </style>
 
 <script setup>
-
 const props = defineProps({
   href: String,
   size: String,
   variant: String,
-  icon: String
-})
+  icon: String,
+});
 
 const className = computed(() => ({
-  ' -rounded': props.variant === 'rounded',
-  ' -small': props.size === 'small',
-  ' -icon': props.icon === 'true'
-}))
+  " -rounded": props.variant === "rounded",
+  " -video": props.variant === "video",
+  " -small": props.size === "small",
+  " -icon": props.icon === "true",
+}));
 </script>
