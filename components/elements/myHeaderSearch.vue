@@ -11,7 +11,7 @@
 
     <div class="header__search__panier">
       <!-- <div class="panier__notif">{{store.count}}</div> -->
-      <div class="panier__notif">{{ store.count }}</div>
+      <div class="panier__notif" v-if="store.count">{{ store.count }}</div>
       <div class="panier__icon">
         <myIcon name="sac" size="small"/>
       </div>
