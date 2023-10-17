@@ -30,7 +30,7 @@
       <div class="sectionHero__droit-bg"></div>
 
       <div class="sectionHero__droit-grid">
-        <myGridCards typeGrid="small" :gridCards="gridProduitsSmall" />
+        <myGridCards typeGrid="small" :gridCards="gridProduitsDinamique" />
       </div>
     </div>
   </section>
@@ -126,17 +126,18 @@ const props = defineProps({
   buttons: Array,
 })
 
-const gridProduitsSmall = computed(() => {
-  return gridProduits.slice(0, 4);
-});
 
 const {data: recettes} = await useAsyncData("recettes", async () => {
   return $fetch(env.public.apiRecetteUrl + "/recipes")
 })
 
-// const getRecettes = async () => {
-//   await client.getGamepads("/recipes")
-// }
+const gridProduitsDinamique = computed(() => {
+  if (recettes.value){
+    return recettes.value.slice(0, 4)
+  } else{
+    return []
+  }
+})
 
 const gridProduits = [
   {

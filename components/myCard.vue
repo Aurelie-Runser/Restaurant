@@ -55,10 +55,13 @@
   <div v-if="type === 'service'" class="card" :class="className">
     <div class="card-service__content">
       <myIcon :name="icon" size="big" bg="orange" />
-      <h4>{{ title }}</h4>
+      <PrismicText class="h4" :field="title"/>
+      <PrismicRichText :field="des"/>
 
+      <!-- 
+      <h4>{{ title }}</h4>
       <p v-if="des">{{ des }}</p>
-      <p v-else><slot /></p>
+      <p v-else><slot /></p> -->
     </div>
   </div>
 </template>

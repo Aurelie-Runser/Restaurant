@@ -1,32 +1,26 @@
 <template>
   <div class="cardAvis">
     <div class="cardAvis__personne">
-      <img class="cardAvis__pp" src="/WilliansJhone.jpg" alt="" />
+      <PrismicImage class="cardAvis__pp" :field="donnees.photo" />
       <div class="cardAvis__desc">
-        <h5>Willians Jhone</h5>
-        <p>CEO & Co-Founder</p>
+        <PrismicText class="h5" :field="donnees.prenom" />
+        <PrismicRichText class="p2" :field="donnees.job" />
       </div>
     </div>
 
-    <p class="cardAvis__avis">
-      “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet nisl tincidunt adipiscing
-      dictumst blandit hac. Lectus cras velit sed dignissim ac, aliquet. Metus egestas habitant
-      feugiat neque ultrices nunc, dolor egestas mus.”
-    </p>
+    <PrismicRichText class="cardAvis__avis" :field="donnees.commentaire" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .cardAvis {
+  flex: none;
   display: grid;
   place-items: center;
   gap: 45px;
-  max-width: 730px;
-  min-width: 500px;
+  width: 100%;
   padding: 100px 20px;
   aspect-ratio: 2/1;
-  box-shadow: 0px 0px 30px 0px rgba($color-gray, 30%);
-  border-radius: 35px;
 
   &__personne {
     display: flex;
@@ -35,7 +29,7 @@
     margin: auto;
     width: fit-content;
 
-    img {
+    .cardAvis__pp {
       width: 76px;
       aspect-ratio: 1/1;
       object-fit: cover;
@@ -47,7 +41,7 @@
         margin: 5px 0;
       }
 
-      p {
+      .p2 {
         @include p2;
       }
     }
@@ -57,8 +51,18 @@
     width: 85%;
     margin: auto;
     text-align: center;
+
+    ::before,
+    ::after {
+      content: '"';
+      display: inline;
+    }
   }
 }
 </style>
 
-<script setup></script>
+<script setup>
+const props = defineProps({
+  donnees: Array,
+});
+</script>
