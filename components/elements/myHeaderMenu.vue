@@ -20,8 +20,8 @@
 </style>
 
 <script setup>
-const liens = [["home", "#"],
-  ["menu", "#"],
-  ["service", "#"],
-  ["shope", "#"]]
+const liens = [["home", "/"],
+  ["menu", "/#menu"],
+  ["service", "/#services"],
+  ["shope", "/"]]
 </script>

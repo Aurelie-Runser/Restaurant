@@ -5,7 +5,7 @@
 
       <myCardInfo :cardsInfo="home.data.card_info"/>
 
-      <section class="sectionGrid">
+      <section id="menu" class="sectionGrid">
         <myTitleSection h2="Product" h3="Most Popular Items" />
 
         <myGridCards typeGrid="big" :gridCards="gridProduitsBigDinamique" />
@@ -17,7 +17,7 @@
         </div>
       </section>
 
-      <section class="sectionGrid">
+      <section id="services" class="sectionGrid">
         <myTitleSection h2="Services" h3="Why Choose Our Favorite Food" />
 
         <myGridCards typeGrid="big" :gridCards="home.data.card_service" />
