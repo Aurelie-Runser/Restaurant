@@ -93,6 +93,7 @@ import chevronIcon from '@/components/icons/chevronIcon.vue'
 import couvertsCroisesIcon from '@/components/icons/couvertsCroisesIcon.vue'
 import couvertsIcon from '@/components/icons/couvertsIcon.vue'
 import etoileIcon from '@/components/icons/etoileIcon.vue'
+import eyeIcon from '@/components/icons/eyeIcon.vue'
 import facebookIcon from '@/components/icons/facebookIcon.vue'
 import flecheIcon from '@/components/icons/flecheIcon.vue'
 import heureIcon from '@/components/icons/heureIcon.vue'
@@ -126,6 +127,8 @@ const getIcon = computed(() => {
     return couvertsCroisesIcon
   case 'etoile':
     return etoileIcon
+  case 'eye':
+    return eyeIcon
   case 'facebook':
     return facebookIcon
   case 'fleche':

@@ -10,14 +10,28 @@
           <h4>{{ title }}</h4>
         </div>
 
-        <div class="card__button" v-if="!store.cart.includes(recipe_id)">
-          <!-- <RouterLink :to="`/recettes/${lien}`"> -->
-            <myButton variant="rounded" size="small"  @click="store.addToCart(recipe_id)">add to Cart</myButton>
-          <!-- </RouterLink> -->
-        </div>
+        <div class="card__buttons">
+          <div class="card__button" v-if="!store.cart.includes(recipe_id)">
+            <myButton
+              variant="rounded"
+              size="small"
+              @click="store.addToCart(recipe_id)"
+              >add to Cart</myButton
+            >
+          </div>
 
-        <div class="card__button" v-if="store.cart.includes(recipe_id)">
-            <myButton variant="rounded" size="small" @click="store.removeFromCart(recipe_id)">remove to Cart</myButton>
+          <div class="card__button" v-if="store.cart.includes(recipe_id)">
+            <myButton
+              variant="rounded"
+              size="small"
+              @click="store.removeFromCart(recipe_id)"
+              >remove to Cart</myButton
+            >
+          </div>
+
+          <RouterLink :to="`/recettes/${lien}`">
+            <MyIcon name="eye" size="medium" bg="orange-blanc" />
+          </RouterLink>
         </div>
       </div>
 
@@ -59,8 +73,8 @@
   <div v-if="type === 'service'" class="card" :class="className">
     <div class="card-service__content">
       <myIcon :name="icon" size="big" bg="orange" />
-      <PrismicText class="h4" :field="title"/>
-      <PrismicRichText :field="des"/>
+      <PrismicText class="h4" :field="title" />
+      <PrismicRichText :field="des" />
 
       <!-- 
       <h4>{{ title }}</h4>
@@ -120,6 +134,12 @@
       &-gauche {
         > :nth-child(n) {
           margin-top: 16px;
+        }
+
+        .card__buttons{
+          display: flex;
+          align-items: center;
+          gap: 10px;
         }
       }
 
@@ -191,7 +211,7 @@
         @include h5;
 
         &::before {
-          content: '$ ';
+          content: "$ ";
           color: #d92f26;
         }
       }
@@ -239,8 +259,8 @@
 </style>
 
 <script setup>
-import { useGlobalStore } from "@/stores/global.js"
-const store = useGlobalStore()
+import { useGlobalStore } from "@/stores/global.js";
+const store = useGlobalStore();
 
 const props = defineProps({
   recipe_id: Number,
@@ -256,13 +276,12 @@ const props = defineProps({
   icon: String,
   des: String,
 
-  lien: String
-
-})
+  lien: String,
+});
 
 const className = computed(() => ({
-  ' -produit-big': props.type === 'produit-big',
-  ' -produit-small': props.type === 'produit-small',
-  ' -service': props.type === 'service'
-}))
+  " -produit-big": props.type === "produit-big",
+  " -produit-small": props.type === "produit-small",
+  " -service": props.type === "service",
+}));
 </script>
