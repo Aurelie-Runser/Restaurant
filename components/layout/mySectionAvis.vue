@@ -3,12 +3,8 @@
     <myTitleSection :title_h2="home.data.avis__title_h2" :title_h3="home.data.avis__title_h3" />
 
     <div class="sectionAvis__content">
-      <myCarrouselCards :donnees="donnees" />
-      <img
-        class="sectionAvis__img"
-        src="/FritesBurgers.png"
-        alt="photo illustrative d'un frite/burger"
-      />
+      <myCarrouselCards :donnees="home.data.card_avis" />
+      <PrismicImage class="cardAvis__pp" :field="home.data.avis_img" />
     </div>
   </section>
 </template>
@@ -44,7 +40,4 @@ if (!home.value || error.value){
   throw createError({statusCode: 404, statusMessage: "La page d'accueil est introuvable"})
 }
 
-const props = defineProps({
-  donnees: Object
-})
 </script>

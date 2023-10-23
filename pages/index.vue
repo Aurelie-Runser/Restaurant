@@ -2,7 +2,6 @@
   <div>
     <div class="mainbody">
       <myHero :title="home.data.hero_title" :text="home.data.hero_texte" :buttons="home.data.hero_buttons"/>
-      {{ home.data.service__title_h2 }}
 
       <myCardInfo :cardsInfo="home.data.card_info"/>
 
@@ -26,7 +25,7 @@
 
       <myWork :title_h2="home.data.how_to__title_h2" :title_h3="home.data.how_to__title_h3" :infos="home.data.how_to"/>
 
-      <mySectionAvis :donnees="home.data.card_avis"/>
+      <mySectionAvis/>
 
       <mySectionEmail />
       
