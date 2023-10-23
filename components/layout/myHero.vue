@@ -3,7 +3,7 @@
     <div class="sectionHero__gauche">
       <div class="sectionHero__gauche-delivery">
         <p>Bike Delivery</p>
-        <img src="/BikeDelivery.jpg" alt="illustration de livraison" />
+        <img src="/img/BikeDelivery.jpg" alt="illustration de livraison" />
       </div>
 
       <!-- <h1 class="sectionHero__gauche-title">

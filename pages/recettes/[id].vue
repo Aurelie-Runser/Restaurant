@@ -6,7 +6,7 @@
       </RouterLink>
     </div>
     <div class="recette__img">
-      <img :src="`/${recette.imgSrc}`" :alt="`photo de ${recette.title}`" />
+      <img :src="`/img/${recette.imgSrc}`" :alt="`photo de ${recette.title}`" />
     </div>
 
     <div class="recette__donnees">
@@ -100,18 +100,12 @@
     </div>
 
     <div class="recette__autres">
-      <RouterLink
-        :to="`/recettes/${recettePreId}`"
-        v-if="recette.recipe_id != 5"
-      >
+      <a :href="`/recettes/${recettePreId}`" v-if="recette.recipe_id != 5">
         <myButton variant="rounded">Recette précédente</myButton>
-      </RouterLink>
-      <RouterLink
-        :to="`/recettes/${recetteSuivId}`"
-        v-if="recette.recipe_id != recettesLength"
-      >
+      </a>
+      <a :href="`/recettes/${recetteSuivId}`" v-if="recette.recipe_id != recettesLength">
         <myButton variant="rounded">Recette suivante</myButton>
-      </RouterLink>
+      </a>
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div v-if="type === 'produit-big'" class="card" :class="className">
     <div class="card__img">
-      <img :src="imgSrc" :alt="imgAlt" />
+      <img :src="`/img/${imgSrc}`" :alt="imgAlt" />
     </div>
 
     <div class="card__content">
@@ -66,7 +66,7 @@
     </div>
 
     <div class="card__img">
-      <img :src="imgSrc" :alt="imgAlt" />
+      <img :src="`/img/${imgSrc}`" :alt="imgAlt" />
     </div>
   </div>
 
@@ -75,11 +75,6 @@
       <myIcon :name="icon" size="big" bg="orange" />
       <PrismicText class="h4" :field="title" />
       <PrismicRichText :field="des" />
-
-      <!-- 
-      <h4>{{ title }}</h4>
-      <p v-if="des">{{ des }}</p>
-      <p v-else><slot /></p> -->
     </div>
   </div>
 </template>
