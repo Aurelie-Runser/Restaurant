@@ -1,14 +1,11 @@
 <template>
   <section class="sectionEmail">
-    <img src="/Burger.png" alt="Photo d'un Burger" />
+    <PrismicImage :field="img"/>
 
     <div class="sectionEmail__content">
-      <h3>Subcribe To Our Newsletter</h3>
+      <PrismicText class="h3 sectionEmail__content-title" :field="title"/>
 
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipidrscing elit. Purus mauris sem sed urna
-        venenatis vivamus. Egestas in velit nulla viverra turpis id ac. Amet faucibus tempus.
-      </p>
+      <PrismicRichText :field="text"/>
 
       <myEmail size="big" />
     </div>
@@ -47,9 +44,18 @@
     > * {
       margin: 15px 0;
     }
+
+    &-title{
+      text-transform: capitalize;
+    }
   }
 }
 </style>
 
 <script setup>
+const props = defineProps({
+  title: String,
+  text: String,
+  img: String,
+})
 </script>
