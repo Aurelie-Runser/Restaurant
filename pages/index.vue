@@ -2,11 +2,12 @@
   <div>
     <div class="mainbody">
       <myHero :title="home.data.hero_title" :text="home.data.hero_texte" :buttons="home.data.hero_buttons"/>
+      {{ home.data.service__title_h2 }}
 
       <myCardInfo :cardsInfo="home.data.card_info"/>
 
       <section id="menu" class="sectionGrid">
-        <myTitleSection h2="Product" h3="Most Popular Items" />
+        <myTitleSection :title_h2="home.data.produits__title_h2" :title_h3="home.data.produits__title_h3" />
 
         <myGridCards typeGrid="big" :gridCards="gridProduitsBigDinamique" />
 
@@ -18,12 +19,12 @@
       </section>
 
       <section id="services" class="sectionGrid">
-        <myTitleSection h2="Services" h3="Why Choose Our Favorite Food" />
+        <myTitleSection :title_h2="home.data.service__title_h2" :title_h3="home.data.service__title_h3" />
 
         <myGridCards typeGrid="big" :gridCards="home.data.card_service" />
       </section>
 
-      <myWork :infos="home.data.how_to"/>
+      <myWork :title_h2="home.data.how_to__title_h2" :title_h3="home.data.how_to__title_h3" :infos="home.data.how_to"/>
 
       <mySectionAvis :donnees="home.data.card_avis"/>
 
@@ -56,7 +57,6 @@ const { data: home, error } = await useAsyncData("home", () =>
 if (!home.value || error.value){
   throw createError({statusCode: 404, statusMessage: "La page d'accueil est introuvable"})
 }
-
 
 // import et gestion de la base de données json
 import myGridCards from '@/components/myGirdCards.vue'

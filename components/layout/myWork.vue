@@ -1,8 +1,8 @@
 <template>
   <section class="sectionWork">
     <myTitleSection
-      h2="How to work"
-      h3="Food Us An Important Part Of A Balanced Diet"
+      :title_h2="title_h2"
+      :title_h3="title_h3"
     />
 
     <div class="sectionWork__etap">
@@ -24,43 +24,6 @@
           <PrismicRichText class="etap__txt" :field="i.how_to_text" />
         </div>
       </div>
-
-
-      <!-- <div class="etap etap-2">
-        <div class="etap__img">
-          <img
-            class="etap__img"
-            src="Nugets.png"
-            alt="Photo illustrative d'un plat de nugets"
-          />
-        </div>
-
-        <div>
-          <h4 class="etap__title">Prepare food</h4>
-          <p class="etap__txt">
-            Do you want to lose weight, exercise, adhere to a therapeutic diet?
-            Our dietitian will help you with choosing the right program!
-          </p>
-        </div>
-      </div>
-
-      <div class="etap etap-3">
-        <div class="etap__img">
-          <img
-            class="etap__img"
-            src="Sacs.png"
-            alt="Photo illustrative de sacs"
-          />
-        </div>
-
-        <div>
-          <h4 class="etap__title">Deliver</h4>
-          <p class="etap__txt">
-            Do you want to lose weight, exercise, adhere to a therapeutic diet?
-            Our dietitian will help you with choosing the right program!
-          </p>
-        </div>
-      </div> -->
     </div>
   </section>
 </template>
@@ -132,6 +95,8 @@
 <script setup>
 
 const props = defineProps({
+  title_h2: String,
+  title_h3: String,
   infos: Array,
 })
 </script>

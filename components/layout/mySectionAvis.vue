@@ -1,6 +1,6 @@
 <template>
   <section class="sectionAvis">
-    <myTitleSection h2="Testimonials" h3="Our Happy Client Says" />
+    <myTitleSection :title_h2="home.data.avis__title_h2" :title_h3="home.data.avis__title_h3" />
 
     <div class="sectionAvis__content">
       <myCarrouselCards :donnees="donnees" />
@@ -34,6 +34,15 @@
 </style>
 
 <script setup>
+// import de Prismic
+const { client } = usePrismic();
+const { data: home, error } = await useAsyncData("home", () =>
+  client.getSingle("homepage")
+)
+
+if (!home.value || error.value){
+  throw createError({statusCode: 404, statusMessage: "La page d'accueil est introuvable"})
+}
 
 const props = defineProps({
   donnees: Object
