@@ -29,7 +29,7 @@
             >
           </div>
 
-          <RouterLink :to="`/recettes/${lien}`">
+          <RouterLink :to="`/recettes/${recipe_id}`">
             <MyIcon name="eye" size="medium" bg="orange-blanc" />
           </RouterLink>
         </div>
