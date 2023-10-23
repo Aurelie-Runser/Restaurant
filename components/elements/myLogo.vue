@@ -1,9 +1,7 @@
 <template>
   <div>
     <RouterLink to="/">
-      <!-- <img src="/Logo.png" alt="Logo de 'FOOD'" /> -->
       <PrismicImage class="cardAvis__pp" :field="home.data.logo" />
-
     </RouterLink>
   </div>
 </template>

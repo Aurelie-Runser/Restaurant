@@ -27,7 +27,7 @@
 
       <mySectionAvis/>
 
-      <mySectionEmail />
+      <mySectionEmail :title="home.data.newsletter__title" :text="home.data.newsletter__text" :img="home.data.newsletter__img" />
       
     </div>
   </div>
