@@ -44,6 +44,12 @@ export const useGlobalStore = defineStore("global", {
             localStorage.setItem('monPanier', JSON.stringify(this.cart))
           }
       }
+    },
+
+    emptyCart(){
+      this.cart = []
+      this.count = 0
+      localStorage.removeItem("monPanier")
     }
   },
 });

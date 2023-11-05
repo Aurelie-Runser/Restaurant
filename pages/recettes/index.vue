@@ -1,6 +1,6 @@
 <template>
     <div class="mainbody page__recettes">
-        <h1 class="page__recettes-title">Les Recettes</h1>
+        <h1 class="page__recettes-title">Recipes</h1>
         <myGridCards class="page__recettes-grid" typeGrid="big" :gridCards="gridProduitsBigDinamique" />
     </div>
 </template>
@@ -36,8 +36,8 @@ const gridProduitsBigDinamique = computed(() => {
 useSeoMeta({
   title: "Recettes du réstaurant FOOD",
   ogTitle: "Recettes du réstaurant FOOD",
-  description: "Recettes disponibles au réstaurant FOOD",
-  ogDescription: "Recettes disponibles au réstaurant FOOD",
+  description: "Recettes disponibles au réstaurant FOOD.",
+  ogDescription: "Recettes disponibles au réstaurant FOOD.",
   ogImage: "/FtitesBurgers.png",
 })
 </script>
