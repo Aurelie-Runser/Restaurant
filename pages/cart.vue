@@ -28,9 +28,29 @@
         </p>
 
         <div class="caisse__boutons">
-          <myButton @click="store.emptyCart()">Buy</myButton>
-          <myButton size="small" @click="store.emptyCart()">Empty my cart</myButton>
+          <myButton @click="ACHATS = !ACHATS">Buy</myButton>
+          <myButton size="small" @click="VIDE_CART = !VIDE_CART">Empty my cart</myButton>
         </div>
+      </div>
+
+      <!-- popup si achat -->
+      <div class="panier__popup" v-if="ACHATS">
+        <p class="popup__title">Do you really want to buy these recipes?</p>
+        <MyButton variant="rounded" @click="(CONFIRME_ACHATS = !CONFIRME_ACHATS) && (ACHATS = !ACHATS)">Yes</MyButton>
+        <MyButton variant="rounded" size="small" @click="ACHATS = !ACHATS">No</MyButton>
+      </div>
+      
+      <!-- popup si confirmation d'achat -->
+      <div class="panier__popup" v-if="CONFIRME_ACHATS">
+        <p class="popup__title">Your transaction has been successfully processed.</p>
+        <MyButton variant="rounded" @click="store.emptyCart()">Okay</MyButton>
+      </div>
+
+      <!-- popup si vider le panier -->
+      <div class="panier__popup" v-if="VIDE_CART">
+        <p class="popup__title">Do you really want to empty your cart?</p>
+        <MyButton variant="rounded" @click="VIDE_CART = !VIDE_CART">No</MyButton>
+        <MyButton variant="rounded" size="small" @click="store.emptyCart()">Yes</MyButton>
       </div>
     </div>
   </div>
@@ -81,25 +101,21 @@
     }
   }
 
-  .caisse__popup {
+  .panier__popup {
     position: fixed;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
     padding: 60px;
     border: 2px solid $color-main;
     background: $color-white;
     top: 50%;
     left: 50%;
-    transform: translate(-50%);
+    transform: translate(-50%, -50%);
 
     .popup__title {
       @include h4;
-      margin-bottom: 30px;
-    }
-
-    .popup__boutons {
-      display: flex;
-      align-items: center;
-      gap: 20px;
     }
   }
 }
@@ -118,6 +134,11 @@ const env = useRuntimeConfig();
 const { data: recettes } = await useAsyncData("recettes", async () => {
   return $fetch(env.public.apiRecetteUrl + "/recipes");
 });
+
+// variables pour afficher ou non les popups
+const ACHATS = ref(false)
+const CONFIRME_ACHATS = ref(false)
+const VIDE_CART = ref(false)
 
 // récupération des recette dont l'id est enregistré dans la liste "store.cart"
 const gridProduitsPanier = computed(() => {
