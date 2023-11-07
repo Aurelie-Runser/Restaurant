@@ -21,7 +21,7 @@
 
 <script setup>
 const liens = [["home", "/"],
-  ["menu", "/#menu"],
+  ["menu", "/recettes"],
   ["service", "/#services"],
   ["shope", "/"]]
 </script>
