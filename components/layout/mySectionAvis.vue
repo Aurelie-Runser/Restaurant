@@ -4,7 +4,7 @@
 
     <div class="sectionAvis__content">
       <myCarrouselCards :donnees="home.data.card_avis" />
-      <PrismicImage class="cardAvis__pp" :field="home.data.avis_img" />
+      <PrismicImage class="sectionAvis__img" :field="home.data.avis_img" />
     </div>
   </section>
 </template>
