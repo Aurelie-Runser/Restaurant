@@ -5,4 +5,6 @@ La branche "main" et "projet-nuxt" correspondent à la version en Nuxt.js, conti
 La branche "projet-vue" corredpond à la version en Vue.js, contient les stories des composants.
 <br/>
 <br/>
+Lien vers la base de données : https://github.com/Aurelie-Runser/APIRecetteAurelieRunser
+<br/>
 Lien vers le site en ligne : https://restaurant.aurelierunser.fr
