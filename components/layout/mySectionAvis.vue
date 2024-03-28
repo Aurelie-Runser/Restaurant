@@ -11,9 +11,11 @@
 
 <style lang="scss" scoped>
 .sectionAvis {
+  max-width: $large4XL;
+  
   &__content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 45px;
 
@@ -21,7 +23,11 @@
       width: 45%;
       flex: none;
       display: none;
-      @include x-large-up {
+    }
+    @include xx-large-up {
+      justify-content: space-between;
+
+      .sectionAvis__img{
         display: block;
       }
     }

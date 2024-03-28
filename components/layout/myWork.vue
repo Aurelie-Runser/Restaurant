@@ -30,6 +30,9 @@
 
 <style lang="scss" scoped>
 .sectionWork {
+  max-width: $large2XL;
+  margin: auto;
+
   &__etap {
     position: relative;
     display: flex;
@@ -95,8 +98,8 @@
 <script setup>
 
 const props = defineProps({
-  title_h2: String,
-  title_h3: String,
+  title_h2: Array,
+  title_h3: Array,
   infos: Array,
 })
 </script>

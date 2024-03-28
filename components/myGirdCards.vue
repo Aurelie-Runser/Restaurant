@@ -15,13 +15,15 @@
   justify-items: center;
   align-items: stretch;
   grid-template-rows: 1fr;
-
+  
   &.-big {
+    max-width: $large3XL;
     grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
     gap: 50px;
   }
-
+  
   &.-small {
+    max-width: $small;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 50px 10px;
   }

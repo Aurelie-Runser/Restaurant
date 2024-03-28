@@ -63,6 +63,6 @@
 
 <script setup>
 const props = defineProps({
-  donnees: Array,
+  donnees: Object,
 });
 </script>

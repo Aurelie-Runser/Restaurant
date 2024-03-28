@@ -1,17 +1,21 @@
 <template>
-    <div class="mainbody page__recettes">
-        <h1 class="page__recettes-title">Recipes</h1>
-        <myGridCards class="page__recettes-grid" typeGrid="big" :gridCards="gridProduitsBigDinamique" />
-    </div>
+  <div class="mainbody page__recettes">
+      <h1 class="page__recettes-title">Recipes</h1>
+      <myGridCards class="page__recettes-grid" typeGrid="big" :gridCards="gridProduitsBigDinamique" />
+  </div>
 </template>
 
 <style lang="scss" scoped>
 .page__recettes{
-    margin-bottom: 135px;
-    
-    &-title{
-        margin: 60px 0;
-    }
+  margin-bottom: 135px;
+  
+  &-title{
+      margin: 60px 0;
+  }
+  
+  &-grid{
+      margin: auto;
+  }
 }
 </style>
 
@@ -27,9 +31,9 @@ const {data: recettes} = await useAsyncData("recettes", async () => {
 
 const gridProduitsBigDinamique = computed(() => {
   if (recettes.value){
-    return recettes.value.slice(4)
+      return recettes.value.slice(4)
   } else{
-    return []
+      return []
   }
 })
 

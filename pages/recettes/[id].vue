@@ -1,9 +1,9 @@
 <template>
   <div class="recette">
     <div class="recette__retour">
-      <RouterLink to="/">
+      <a href="/">
         <myButton size="small">Back home</myButton>
-      </RouterLink>
+      </a>
     </div>
     <div class="recette__img">
       <img :src="`/img/${recette.imgSrc}`" :alt="`photo de ${recette.title}`" />
@@ -114,10 +114,12 @@
 .recette {
   display: flex;
   flex-wrap: wrap;
+  width: fit-content;
+  max-width: $large5XL;
+  margin: auto;
 
   > * {
     flex: auto;
-    width: 50vw;
     min-width: 500px;
   }
 
@@ -128,20 +130,23 @@
   }
 
   &__img {
-    max-width: $large;
+    width: 40vw;
+    max-width: $medium;
+    margin: 0 auto;
 
     img {
       position: sticky;
       top: 25%;
       width: 80%;
-      margin: 10%;
+      margin: 5% 10%;
       border-radius: 30px;
       box-shadow: 0 0 15px 5px lighten($color-gray, 15%);
     }
   }
 
   &__donnees {
-    padding-right: 10%;
+    width: 50%;
+    padding: 0 5%;
 
     &-rapide {
       @include h5;
@@ -168,7 +173,7 @@
       margin: 50px 0;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: start;
+      align-items: flex-start;
       gap: 30px;
 
       .donnee__type {
@@ -179,7 +184,7 @@
       .diertary {
         display: grid;
         grid-template-columns: auto 1fr;
-        align-items: start;
+        align-items: flex-start;
         gap: 0.25rem;
       }
 

@@ -2,14 +2,14 @@
   <div class="header__search">
     <div class="header__search__input">
       <div class="input__icon">
-        <myIcon name="loupe" size="small" @click="searchRecipes"/>
+        <myIcon name="loupe" size="small" @click="filtreRecettes"/>
       </div>
       <input type="text" size="15" placeholder="Search" v-model="RecetteChercher" @blur="handleDelayedBlur">
 
       <!-- liste des recettes rechercher -->
       <ul class="input__resultat-liste" v-if="RecetteChercher != 0">
         <li class="input__resultat-item" v-for="recette in filtreRecette" :key="recette.id">
-          <RouterLink :to="`/recettes/${recette.recipe_id}`">{{ recette.title }}</RouterLink>
+          <a :href="`/recettes/${recette.recipe_id}`">{{ recette.title }}</a>
         </li>
       </ul>
     </div>

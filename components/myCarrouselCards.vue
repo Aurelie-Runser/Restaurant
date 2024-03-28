@@ -64,10 +64,8 @@
 </style>
 
 <script setup>
-import { ref, defineProps, computed } from "vue";
-
 const props = defineProps({
-  donnees: Array,
+  donnees: Object,
 });
 
 const carrouselRef = ref(null);

@@ -62,6 +62,10 @@
     gap: 20px;
     padding: 20px;
   }
+
+  &:hover{
+    filter: brightness(1.2);
+  }
 }
 </style>
 

@@ -41,7 +41,7 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   gap: 50px;
 
   &__gauche {
@@ -138,39 +138,4 @@ const gridProduitsDinamique = computed(() => {
     return []
   }
 })
-
-const gridProduits = [
-  {
-    type: "produit-small",
-    imgSrc: "/Burger.png",
-    imgAlt: "Photo d'un Burger",
-    title: "Burger",
-    prix: "5.15",
-    des: "Mushroom Sauce",
-  },
-  {
-    type: "produit-small",
-    imgSrc: "/FoodCombo.png",
-    imgAlt: "Photo de Food Combo",
-    title: "Food Combo",
-    prix: "9.15",
-    des: "Mushroom Sauce",
-  },
-  {
-    type: "produit-small",
-    imgSrc: "/Pizza.png",
-    imgAlt: "Photo de Pizza",
-    title: "Pizza",
-    prix: "6.15",
-    des: "Mushroom Sauce",
-  },
-  {
-    type: "produit-small",
-    imgSrc: "/Cake.png",
-    imgAlt: "Photo de Cake",
-    title: "Cake",
-    prix: "5.15",
-    des: "Mushroom Sauce",
-  },
-];
 </script>

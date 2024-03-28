@@ -34,7 +34,6 @@
   width: fit-content;
   max-width: 380px;
   height: fit-content;
-  //   border: red solid 2px;
 
   &__logo {
     width: 180px;
@@ -71,7 +70,7 @@
 <script setup>
 defineProps({
   title: String,
-  logo: String,
+  logo: Boolean,
   liens: Array,
   texte: String,
   icons: Array,

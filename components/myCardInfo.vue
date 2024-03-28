@@ -14,7 +14,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1600px;
+  max-width: $large4XL;
   height: min-content;
   border-radius: 50px;
   box-shadow: 0px 0px 50px 0px rgba($color-gray, 20%);

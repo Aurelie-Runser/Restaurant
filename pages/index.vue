@@ -36,7 +36,7 @@
 <style lang="scss" scoped>
 .sectionGrid {
   > * {
-    margin: 57px 0;
+    margin: 57px auto;
   }
 
   .buttonCenter {
@@ -83,94 +83,6 @@ const gridProduitsBigDinamique = computed(() => {
 const recettesEncore = computed(() => {
   return gridProduitsBigDinamique.value.length < recettes.value.length-4
 })
-
-// const gridProduitsBig = [
-//   {
-//     type: 'produit-big',
-//     imgSrc: '/GyroSandwhic.jpg',
-//     imgAlt: 'Photo de Gyro Sandwitc',
-//     title: 'Gyro Sandwhic',
-//     prix: '15.00',
-//     note: '4.9',
-//     lien: "gyro-sandwhic"
-//   },
-//   {
-//     type: 'produit-big',
-//     imgSrc: '/Enchilade.jpg',
-//     imgAlt: 'Photo de Enchilade',
-//     title: 'Enchilade',
-//     prix: '25.50',
-//     note: '5.0',
-//     lien: "enchilade"
-
-//   },
-//   {
-//     type: 'produit-big',
-//     imgSrc: '/GreenBeans.jpg',
-//     imgAlt: 'Photo de Green Beans',
-//     title: 'Green Beans',
-//     prix: '12.00',
-//     note: '4.9',
-//     lien: "green-beans"
-
-//   },
-//   {
-//     type: 'produit-big',
-//     imgSrc: '/Pizza.jpg',
-//     imgAlt: 'Photo de Pizza',
-//     title: 'Pizza',
-//     prix: '18.50',
-//     note: '5.0',
-//     lien: "pizza"
-
-//   },
-//   {
-//     type: 'produit-big',
-//     imgSrc: '/ChickenPotPie.jpg',
-//     imgAlt: 'Photo de Chicken Pot Pie',
-//     title: 'Chicken Pot Pie',
-//     prix: '25.00',
-//     note: '4.9',
-//     lien: "chicken-pot-pie"
-
-//   },
-//   {
-//     type: 'produit-big',
-//     imgSrc: '/GreenSalad.jpg',
-//     imgAlt: 'Photo de Green Salad',
-//     title: 'Green Salad',
-//     prix: '15.00',
-//     note: '4.9',
-//     lien: "green-salad"
-
-//   }
-// ]
-
-// const gridServices = [
-//   {
-//     type: 'service',
-//     icon: 'couvertsCroises',
-//     title: 'Qualityfull Food',
-//     des: `But I must explain to you how all this
-//           mistaken idea.`
-//   },
-//   {
-//     type: 'service',
-//     icon: 'couverts',
-//     title: 'Healthy Food',
-//     des: `But I must explain to you how all this
-//           mistaken idea of denouncing pleasur and
-//           prasising pain was bron.`
-//   },
-//   {
-//     type: 'service',
-//     icon: 'camion',
-//     title: 'Fast Delivery',
-//     des: `But I must explain to you how all this
-//           mistaken idea of denouncing pleasur and
-//           prasising pain was bron.`
-//   }
-// ]
 
 useSeoMeta({
   title: home.value.data.meta_title,

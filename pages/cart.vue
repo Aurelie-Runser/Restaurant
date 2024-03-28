@@ -72,6 +72,10 @@
     }
   }
 
+  &__grid{
+    margin: auto
+  }
+
   &__ligne {
     margin: 60px 0;
     color: $color-main;
@@ -81,7 +85,7 @@
     margin: 0 auto;
     width: fit-content;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     gap: 120px;
 
     .caisse__prix {

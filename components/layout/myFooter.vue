@@ -6,7 +6,7 @@
 
 <style lang="scss" scoped>
 .footer {
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   padding: 57px 0;
   background: rgba($color-gray, 10%);

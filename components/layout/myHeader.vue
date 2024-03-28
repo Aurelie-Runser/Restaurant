@@ -14,12 +14,13 @@
   position: sticky;
   top: 0;
   display: block;
-  width: 100vw;
+  width: 100%;
   margin-top: 15px;
   background: $color-white;
 
   &__content {
-    max-width: 85vw;
+    width: 85vw;
+    max-width: $large3XL;
     margin: auto;
     padding: 15px 0;
     display: flex;

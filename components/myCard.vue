@@ -29,9 +29,9 @@
             >
           </div>
 
-          <RouterLink :to="`/recettes/${recipe_id}`">
+          <a :href="`/recettes/${recipe_id}`">
             <MyIcon name="eye" size="medium" bg="orange-blanc" />
-          </RouterLink>
+          </a>
         </div>
       </div>
 
@@ -123,18 +123,33 @@
     .card__content {
       display: flex;
       justify-content: space-between;
-      align-items: start;
+      align-content: space-between;
       margin: 0 32px;
+      height: 35%;
 
       &-gauche {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        
         > :nth-child(n) {
           margin-top: 16px;
         }
-
+        
         .card__buttons{
+          justify-self: end;
           display: flex;
           align-items: center;
           gap: 10px;
+          width: fit-content;
+          height: fit-content;
+          margin: auto;
+
+          > :nth-child(n+2){
+            &:hover{
+              filter: brightness(1.2);
+            }
+          }
         }
       }
 
@@ -158,7 +173,7 @@
 
   &.-produit-small {
     position: relative;
-    max-width: 300px;
+    max-width: 250px;
     min-width: 200px;
     aspect-ratio: 2/3;
     z-index: 0;
@@ -260,16 +275,16 @@ const store = useGlobalStore();
 const props = defineProps({
   recipe_id: Number,
   type: String,
-  title: String,
+  title: Array,
 
   imgSrc: String,
   imgAlt: String,
 
-  prix: String,
-  note: String,
+  prix: Number,
+  note: Number,
 
   icon: String,
-  des: String,
+  des: Array,
 
   lien: String,
 });

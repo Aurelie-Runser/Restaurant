@@ -1,8 +1,8 @@
 <template>
   <div>
-    <RouterLink to="/">
+    <a href="/">
       <PrismicImage class="cardAvis__pp" :field="home.data.logo" />
-    </RouterLink>
+    </a>
   </div>
 </template>
 

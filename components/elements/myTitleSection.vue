@@ -24,7 +24,7 @@
 
 <script setup>
 defineProps({
-  title_h2: String,
-  title_h3: String
+  title_h2: Array,
+  title_h3: Array
 })
 </script>

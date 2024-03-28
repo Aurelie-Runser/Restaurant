@@ -19,6 +19,7 @@
   justify-content: space-around;
   padding: 74px 50px;
   width: 100%;
+  max-width: $large4XL;
   height: 300px;
   border-radius: 50px;
   background-color: $color-black;
@@ -54,8 +55,8 @@
 
 <script setup>
 const props = defineProps({
-  title: String,
-  text: String,
-  img: String,
+  title: Array,
+  text: Array,
+  img: Object,
 })
 </script>
