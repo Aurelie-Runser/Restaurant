@@ -10,6 +10,7 @@
 
 <style lang="scss" scoped>
 .header {
+  display: none;
   z-index: 50;
   position: sticky;
   top: 0;
@@ -17,6 +18,10 @@
   width: 100%;
   margin-top: 15px;
   background: $color-white;
+
+  @include xx-large-up{
+    display: block;
+  }
 
   &__content {
     width: 85vw;

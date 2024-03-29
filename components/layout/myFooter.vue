@@ -6,6 +6,7 @@
 
 <style lang="scss" scoped>
 .footer {
+  display: none;
   width: 100%;
   height: fit-content;
   padding: 57px 0;
@@ -14,6 +15,10 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
+
+  @include xx-large-up{
+    display: block;
+  }
 }
 </style>
 
