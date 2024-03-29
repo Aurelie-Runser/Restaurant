@@ -28,7 +28,7 @@
 </style>
 
 <script setup>
-const bigWindow = ref(true);
+const bigWindow = ref(false);
 
 const calculeWindow = () => {
   if (window.innerWidth <= 768) {
