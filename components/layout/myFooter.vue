@@ -11,13 +11,12 @@
   height: fit-content;
   padding: 57px 0;
   background: rgba($color-gray, 10%);
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   gap: 20px;
 
   @include xx-large-up{
-    display: block;
+    display: flex;
   }
 }
 </style>

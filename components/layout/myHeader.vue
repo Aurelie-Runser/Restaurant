@@ -14,7 +14,6 @@
   z-index: 50;
   position: sticky;
   top: 0;
-  display: block;
   width: 100%;
   margin-top: 15px;
   background: $color-white;
