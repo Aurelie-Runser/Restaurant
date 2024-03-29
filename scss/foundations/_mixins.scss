@@ -27,8 +27,14 @@
         @content;
     }
 }
-  
+
 @mixin xx-large-up {
+    @media screen and (min-width: ($largeXL + 1px)) {
+        @content;
+    }
+}
+
+@mixin xxx-large-up {
     @media screen and (min-width: ($large3XL + 1px)) {
         @content;
     }

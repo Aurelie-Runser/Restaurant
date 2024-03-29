@@ -3,7 +3,7 @@
     <myTitleSection :title_h2="home.data.avis__title_h2" :title_h3="home.data.avis__title_h3" />
 
     <div class="sectionAvis__content">
-      <myCarrouselCards :donnees="home.data.card_avis" />
+      <myCarrouselCards class="sectionAvis__card" :donnees="home.data.card_avis" />
       <PrismicImage class="sectionAvis__img" :field="home.data.avis_img" />
     </div>
   </section>
@@ -17,13 +17,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 45px;
+    gap: 30px;
+
+    .sectionAvis__card {
+      max-width: 700px;
+      flex: 1 1 40%;
+    }
 
     .sectionAvis__img {
-      width: 45%;
+      width: 40%;
       flex: none;
       display: none;
     }
+    
     @include xx-large-up {
       justify-content: space-between;
 

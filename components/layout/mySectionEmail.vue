@@ -28,7 +28,7 @@
     display: none;
     flex: none;
     width: 38%;
-    @include x-large-up {
+    @include xx-large-up {
       display: block;
     }
   }

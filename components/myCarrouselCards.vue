@@ -15,7 +15,6 @@
     <div class="carrouselCards__carrousel" ref="carrousel">
       <myCardAvis
         class="card"
-        :class="{ active: card === activeCard }"
         :key="card.id"
         v-for="card in donnees"
         :donnees="activeCard"
@@ -27,7 +26,7 @@
 <style lang="scss" scoped>
 .carrouselCards {
   position: relative;
-  width: 730px;
+  width: 100%;
 
   .iconFleche {
     position: absolute;
@@ -44,21 +43,20 @@
       left: 0;
       transform: translateX(-50%);
     }
+
+    &:hover{
+      filter: brightness(1.2)
+    }
   }
 
   &__carrousel {
     display: flex;
     flex-direction: row-reverse;
     overflow: hidden;
-    max-width: 730px;
+    max-width: 100%;
     min-width: 500px;
     box-shadow: 0px 0px 30px 0px rgba($color-gray, 30%);
     border-radius: 35px;
-
-    .active {
-      transition: opacity 0.3s ease-in-out;
-      opacity: 1;
-    }
   }
 }
 </style>

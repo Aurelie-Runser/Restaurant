@@ -1,17 +1,26 @@
 <template>
-  <myHeader v-if="bigWindow"/>
-  <NuxtPage v-if="bigWindow"/>
-  <myFooter v-if="bigWindow"/>
-  <div v-else class="smallWindow">
+  <myHeader/>
+  <NuxtPage class="bigWindow"/>
+  <myFooter/>
+  <div class="smallWindow">
     <h3>La version mobile arrive prochainement</h3>
     <img src="/img/Logo.png" alt="Logo de FOOD">
   </div>
 </template>
 
 <style lang="scss">
+.bigWindow{
+  display: none;
+
+  @include xx-large-up{
+    display: block;
+  }
+}
+
 .smallWindow{
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
   margin: auto;
   padding: 10%;
   display: flex;
@@ -24,26 +33,9 @@
   img{
     max-width: 400px;
   }
+
+  @include xx-large-up{
+    display: none
+  }
 }
 </style>
-
-<script setup>
-const bigWindow = ref(false);
-
-const calculeWindow = () => {
-  if (window.innerWidth <= 768) {
-    bigWindow.value = false
-  } else {
-    bigWindow.value = true
-  }
-};
-
-onMounted(() => {
-  calculeWindow();
-  window.addEventListener('resize', calculeWindow);
-});
-
-onUnmounted(() => {
-  window.removeEventListener('resize', calculeWindow);
-});
-</script>
