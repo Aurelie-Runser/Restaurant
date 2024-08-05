@@ -1,10 +1,13 @@
 # Exercice d'Intergration de Maquette
 
-La branche "main" et "projet-nuxt" correspondent à la version en Nuxt.js, contient toutes les pages et fonctionnalités du projet.
-<br/>
-La branche "projet-vue" corredpond à la version en Vue.js, contient les stories des composants.
-<br/>
-<br/>
-Lien vers la base de données : https://github.com/Aurelie-Runser/APIRecetteAurelieRunser
+En 2 semaines de cours de développement front-end, au MMI de Montbéliard, nous avons appris :
+
+- les bases du framework **Vue3** (et les différences par rapport à Vue2 apprit les années précédentes)
+- les bases du framework **Nuxt.js**
+- le langage **Sass/Scss**
+- la notion d'Atomic Design
+- Git, soit créer des branchs, des pull-request et merges...
+
+Pour nous entrainer à maitriser tout cela, nous devions intégrer une maquette fournie par note professeur en prêtant une grande attention à la réaliser en atomic design, à utiliser la méthode BEM et utiliser Git comme si nous travaillions à plusieurs (ex : ne rien push sur la branch main).
 <br/>
 Lien vers le site en ligne : https://restaurant.aurelierunser.fr
